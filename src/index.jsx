@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Cv from './components/Cv';
+import Site from './components/Site';
 
 const content = ['Foo', 'Bar'];
 
 ReactDOM.render(
-    <Cv content={content} />,
+    <Site />,
     document.getElementById('app')
 );
 
