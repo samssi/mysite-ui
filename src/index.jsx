@@ -7,9 +7,10 @@ import Login from './components/login/Login'
 
 ReactDOM.render((
     <Router history={browserHistory}>
-        <Route path="/" component={App}/>
-        <Route path="/cv" component={Cv}/>
-        <Route path="/login" component={Login}/>
+        <Route path="/" component={App}>
+            <Route path="/cv" component={Cv}/>
+            <Route path="/login" component={Login}/>
+        </Route>
     </Router>
 ), document.getElementById('app'))
 

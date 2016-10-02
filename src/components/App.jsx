@@ -11,6 +11,7 @@ export default React.createClass({
                     <li><Link to="/cv">Cv</Link></li>
                     <li><Link to="/login">Login</Link></li>
                 </ul>
+                {this.props.children}
             </div>
         );
         }
