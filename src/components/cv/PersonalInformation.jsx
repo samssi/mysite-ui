@@ -13,12 +13,12 @@ const json = {
 
 export default React.createClass({
     render() {
-        return (<div className="name">
-            <p>{json.name}</p>
-            <p>{json.address.street}</p>
-            <p>{json.address.zipcode} {json.address.city}</p>
-            <p>{json.phoneNumber}</p>
-            <p>{json.dateOfBirth}</p>
+        return (<div className="personalInformation">
+            <div className="leftColumn">{json.name}</div><div className="rightColumn">CURRICULUM VITAE</div>
+            <div className="leftColumn">{json.address.street}</div>
+            <div className="leftColumn">{json.address.zipcode} {json.address.city}</div>
+            <div className="leftColumn">{json.phoneNumber}</div>
+            <div className="leftColumn">{json.dateOfBirth}</div>
         </div>);
     }
 });
