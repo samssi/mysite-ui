@@ -1,0 +1,24 @@
+{
+  "Henkilötiedot":
+    [
+      {
+        "title": "Nimi",
+        "content": "Pekka Peloton"
+      },
+      {
+        "title": "Syntymäaika",
+        "content": "Pekka Peloton"
+      }
+    ],
+  "Koulutus":
+    [
+      {
+        "title": "Tampereen Yliopisto",
+        "content": "Maisteri, helmikuu 2008"
+      },
+      {
+        "title": "Tampereen Lyseon Lukio",
+        "content": "Ylioppilas, kesäkuu 2001"
+      }
+    ]
+}
