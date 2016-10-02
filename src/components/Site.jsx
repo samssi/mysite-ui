@@ -7,7 +7,7 @@ import Header from './Header'
 export default React.createClass({
     render: function() {
         return <div className="site">
-                 <Header />
+                 <Header source="foo" />
                  <Cv />
                </div>;
     }
