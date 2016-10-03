@@ -7,7 +7,8 @@ export default React.createClass({
                  street: '',
                  zipCodeAndCity: '',
                  phoneNumber: '',
-                 dateOfBirth: ''
+                 dateOfBirth: '',
+                 cvTitle: ''
         };
     },
     loadPersonalInformation() {
@@ -19,7 +20,8 @@ export default React.createClass({
                     street: json.address.street,
                     zipCodeAndCity: json.address.zipcode + ' ' + json.address.city,
                     phoneNumber: json.phoneNumber,
-                    dateOfBirth: json.dateOfBirth
+                    dateOfBirth: json.dateOfBirth,
+                    cvTitle: 'CURRICULUM VITAE'
                     });
             })
             .catch((error) => {
@@ -31,7 +33,7 @@ export default React.createClass({
     },
     render() {
         return (<div className="personalInformation">
-            <div className="leftColumn">{this.state.name}</div><div className="rightColumn">CURRICULUM VITAE</div>
+            <div className="leftColumn">{this.state.name}</div><div className="rightColumn">{this.state.cvTitle}</div>
             <div className="leftColumn">{this.state.street}</div>
             <div className="leftColumn">{this.state.zipCodeAndCity}</div>
             <div className="leftColumn">{this.state.phoneNumber}</div>
