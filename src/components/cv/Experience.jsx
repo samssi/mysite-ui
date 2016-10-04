@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 
 function renderHeaders(jsonData) {
-    console.log('header render: ' + jsonData);
     return jsonData.map((object, i) => {
        return (
            <div className="header" key={i}>
@@ -14,11 +13,10 @@ function renderHeaders(jsonData) {
 }
 
 function renderBlocks(blocks) {
-    console.log("Blocks: " + blocks);
     return blocks.map((block, j) => {
         return (
             <div className="block" key={j}>
-                {block.title} - {block.content}
+                <div className="leftColumn">{block.title}</div><div className="rightColumn">{block.content}</div>
             </div>
         );
     });
