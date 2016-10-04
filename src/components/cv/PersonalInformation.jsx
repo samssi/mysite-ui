@@ -21,7 +21,7 @@ export default React.createClass({
                     zipCodeAndCity: json.address.zipcode + ' ' + json.address.city,
                     phoneNumber: json.phoneNumber,
                     dateOfBirth: json.dateOfBirth,
-                    cvTitle: 'CURRICULUM VITAE'
+                    cvTitle: json.title
                     });
             })
             .catch((error) => {
