@@ -1,6 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 
+function renderHeaders(jsonData) {
+    console.log('header render: ' + jsonData);
+    return jsonData.map((object, i) => {
+       return (<div className="header" key={i}>{object.header}</div>);
+    });
+}
+
 export default React.createClass({
     getInitialState: function() {
         return {
@@ -23,10 +30,10 @@ export default React.createClass({
         this.loadExperienceInformation();
     },
     render() {
+        const headers = renderHeaders(this.state.jsonData);
+
         return (<div className="experienceInformation">
-            {this.state.jsonData.map((object, i) => {
-                return (<div className="header" key={i}>{object.header}</div>);
-            })}
+            { headers }
         </div>);
     }
 });
