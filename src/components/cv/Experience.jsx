@@ -29,7 +29,7 @@ export default React.createClass({
         };
     },
     loadExperienceInformation() {
-        axios.get('http://localhost:8090/contents/experiences')
+        axios.get("http://localhost:8090/contents/experiences")
             .then((response) => {
                 const json = response.data;
                 this.setState({
