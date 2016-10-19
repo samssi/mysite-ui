@@ -7,14 +7,24 @@ module.exports = {
         './src/index.jsx'
     ],
     module: {
-        loaders: [{
-            test: /\.jsx?$/,
-            exclude: /node_modules/,
-            loader: 'babel'
-        }]
+        loaders: [
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                loader: 'babel'
+            },
+            {
+                test: /\.css$/,
+                loader: 'style-loader!css-loader'
+            },
+            {
+                test   : /\.(eot|ttf|woff|woff2)$/,
+                loader : 'file-loader'
+            }
+        ]
     },
     resolve: {
-        extensions: ['', '.js', '.jsx']
+        extensions: ['', '.js', '.jsx', '.css', '.eot', '.ttf', '.woff', '.woff2']
     },
     output: {
         path: __dirname + '/dist',

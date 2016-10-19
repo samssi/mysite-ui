@@ -4,6 +4,7 @@ import {Router, Route, browserHistory} from 'react-router';
 import App from './components/App'
 import Cv from './components/cv/Cv'
 import Login from './components/login/Login'
+import styles from './fonts/font.css';
 
 ReactDOM.render((
     <Router history={browserHistory}>
