@@ -11,14 +11,19 @@ const rightColumn = {
     float: 'right'
 };
 
+const header = {
+    color: 'white'
+}
+
 const column = {
+    color: 'white',
     display: 'block'
 };
 
 function renderHeaders(jsonData) {
     return jsonData.map((object, i) => {
        return (
-           <div className="header" key={i}>
+           <div style={header} key={i}>
                {(object.header === "") ? "&nbsp;" : object.header}
                {renderBlocks(object.blocks)}
            </div>

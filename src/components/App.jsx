@@ -1,5 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router'
+import Load from './Load'
+import Banner from './Banner'
+import MysiteBanner from './MysiteBanner'
 
 const divStyle = {
     height: '100vh',
@@ -40,28 +43,33 @@ const headerBanner = {
 };
 
 class App extends React.Component {
-    componentWillMount() {
+    constructor(props, context) {
+        super(props, context);
         document.body.style.backgroundColor = "#6076c5";
-        document.body.style.color = "white";
+        document.body.style.color = "#6076c5";
         document.body.style.padding = "47px";
         document.body.style.fontFamily = "C64";
+
+        this.state = {
+            loading: true
+        }
+    }
+    componentDidMount() {
+        this.state.loading = false
     }
 
     render() {
         return (
             <div>
-                <div style={headerBanner}>
-                     <div>**** COMMODORE 64 BASIC V2 ****</div>
-                    <br />
-                    <div>64K RAM SYSTEM  38911 BASIC BYTES FREE</div>
-                </div>
                 <div style={divStyle}>
-                    <ul role="nav" style={ulStyle}>
-                        <li style={liStyle}><Link to="/" style={liAStyle}>F1 ETUSIVU</Link></li>
-                        <li style={liStyle}><Link to="/cv" style={liAStyle}>F3 CV</Link></li>
-                        <li style={liStyle}><Link to="/login" style={liAStyle}>F5 LOGIN</Link></li>
-                    </ul>
-                    {this.props.children}
+                {this.state.loading ?  (<div><Banner /><Load /></div>) : (<MysiteBanner />)}
+                {this.state.loading ? (<MysiteBanner />) : ''}
+                <ul role="nav" style={ulStyle}>
+                   <li style={liStyle}><Link to="/" style={liAStyle}>F1 ETUSIVU</Link></li>
+                   <li style={liStyle}><Link to="/cv" style={liAStyle}>F3 CV</Link></li>
+                   <li style={liStyle}><Link to="/login" style={liAStyle}>F5 LOGIN</Link></li>
+                 </ul>
+                 {this.props.children}
                 </div>
             </div>
         );

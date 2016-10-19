@@ -8,7 +8,7 @@
     font-style: normal;
 }
 
-@-webkit-keyframes blink {
+@-webkit-keyframes blink-white {
     0%   {background-color: white;}
     49%  {background-color: white;}
     50% {background-color: #20398d;}
@@ -16,9 +16,24 @@
 
 }
 
-@keyframes blink {
+@keyframes blink-white {
     0%   {background-color: white;}
     49%  {background-color: white;}
     50% {background-color: #20398d;}
     100% {background-color: #20398d;}
+}
+
+@-webkit-keyframes blink-blue {
+    0%   {background-color: #20398d;}
+    49%  {background-color: #20398d;}
+    50% {background-color: #6076c5;}
+    100% {background-color: #6076c5;}
+
+}
+
+@keyframes blink-blue {
+    0%   {background-color: #20398d;}
+    49%  {background-color: #20398d;}
+    50% {background-color: #6076c5;}
+    100% {background-color: #6076c5;}
 }

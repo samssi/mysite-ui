@@ -12,10 +12,11 @@ const rightColumn = {
 };
 
 const column = {
-    display: 'block'
+    display: 'block',
 };
 
 const personalInformation = {
+    color: 'white',
     'padding-top': '10px',
     'padding-bottom': '10px'
 };
