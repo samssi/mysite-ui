@@ -7,3 +7,18 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@-webkit-keyframes blink {
+    0%   {background-color: white;}
+    49%  {background-color: white;}
+    50% {background-color: #20398d;}
+    100% {background-color: #20398d;}
+
+}
+
+@keyframes blink {
+    0%   {background-color: white;}
+    49%  {background-color: white;}
+    50% {background-color: #20398d;}
+    100% {background-color: #20398d;}
+}
