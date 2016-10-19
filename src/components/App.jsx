@@ -1,11 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-export default React.createClass({
+class App extends React.Component {
     render() {
         return (
             <div>
-                <h1>Mysite</h1>
                 <ul role="nav">
                     <li><Link to="/">Etusivu</Link></li>
                     <li><Link to="/cv">Cv</Link></li>
@@ -14,5 +13,7 @@ export default React.createClass({
                 {this.props.children}
             </div>
         );
-        }
-    });
+    }
+}
+
+export default App;
