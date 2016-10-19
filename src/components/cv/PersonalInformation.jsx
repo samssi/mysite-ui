@@ -32,7 +32,7 @@ class PersonalInformation extends React.Component {
             street: '',
             zipCodeAndCity: '',
             phoneNumber: '',
-            dateOfBirth: '',
+            applicationDate: '',
             cvTitle: ''
         }
     }
@@ -46,7 +46,7 @@ class PersonalInformation extends React.Component {
                     street: json.address.street,
                     zipCodeAndCity: json.address.zipcode + ' ' + json.address.city,
                     phoneNumber: json.phoneNumber,
-                    dateOfBirth: json.dateOfBirth,
+                    applicationDate: json.applicationDate,
                     cvTitle: json.title
                 });
             })
@@ -65,7 +65,7 @@ class PersonalInformation extends React.Component {
             <div style={personalInfoField}><span style={leftColumn}>{this.state.street}</span></div>
             <div style={personalInfoField}><span style={leftColumn}>{this.state.zipCodeAndCity}</span></div>
             <div style={personalInfoField}><span style={leftColumn}>{this.state.phoneNumber}</span></div>
-            <div style={personalInfoField}><span style={rightColumn}>{this.state.dateOfBirth}</span></div>
+            <div style={personalInfoField}><span style={rightColumn}>{this.state.applicationDate}</span></div>
         </div>);
     }
 }
