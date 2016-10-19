@@ -1,6 +1,29 @@
 import React from 'react';
 import axios from 'axios';
 
+const leftColumn = {
+    width: '500px',
+    overflow: 'hidden'
+};
+
+const rightColumn = {
+    width: '755px',
+    float: 'right'
+};
+
+const column = {
+    display: 'block'
+};
+
+const personalInformation = {
+    'padding-top': '10px',
+    'padding-bottom': '10px'
+};
+
+const personalInfoField = {
+    display: 'block'
+};
+
 class PersonalInformation extends React.Component {
     constructor(props, context) {
         super(props, context);
@@ -37,13 +60,12 @@ class PersonalInformation extends React.Component {
     }
 
     render() {
-        return (<div className="personalInformation">
-            <div className="personalInfoField"><span className="leftColumn">{this.state.name}</span><span
-                className="rightColumn">{this.state.cvTitle}</span></div>
-            <div className="personalInfoField"><span className="leftColumn">{this.state.street}</span></div>
-            <div className="personalInfoField"><span className="leftColumn">{this.state.zipCodeAndCity}</span></div>
-            <div className="personalInfoField"><span className="leftColumn">{this.state.phoneNumber}</span></div>
-            <div className="personalInfoField"><span className="leftColumn">{this.state.dateOfBirth}</span></div>
+        return (<div style={personalInformation}>
+            <div style={personalInfoField}><span style={leftColumn}>{this.state.name}</span><span style={rightColumn}>{this.state.cvTitle}</span></div>
+            <div style={personalInfoField}><span style={leftColumn}>{this.state.street}</span></div>
+            <div style={personalInfoField}><span style={leftColumn}>{this.state.zipCodeAndCity}</span></div>
+            <div style={personalInfoField}><span style={leftColumn}>{this.state.phoneNumber}</span></div>
+            <div style={personalInfoField}><span style={rightColumn}>{this.state.dateOfBirth}</span></div>
         </div>);
     }
 }

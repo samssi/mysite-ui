@@ -1,6 +1,20 @@
 import React from 'react';
 import axios from 'axios';
 
+const leftColumn = {
+    width: '500px',
+    overflow: 'hidden'
+};
+
+const rightColumn = {
+    width: '755px',
+    float: 'right'
+};
+
+const column = {
+    display: 'block'
+};
+
 function renderHeaders(jsonData) {
     return jsonData.map((object, i) => {
        return (
@@ -15,8 +29,8 @@ function renderHeaders(jsonData) {
 function renderBlocks(blocks) {
     return blocks.map((block, j) => {
         return (
-            <div className="experience" key={j}>
-                <span className="leftColumn">{(block.title === "") ? "\u00a0" : block.title }</span><span className="rightColumn">{block.content}</span>
+            <div style={column} key={j}>
+                <span style={leftColumn}>{(block.title === "") ? "\u00a0" : block.title }</span><span style={rightColumn}>{block.content}</span>
             </div>
         );
     });
