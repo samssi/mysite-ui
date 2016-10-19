@@ -5,8 +5,8 @@ import MysiteBanner from './MysiteBanner'
 import Menu from './Menu'
 import Cursor from './style/Cursor'
 
-const divStyle = {
-    height: '100vh',
+const mainBlock = {
+    height: '200vh',
     'background-color': '#20398d'
 };
 
@@ -37,7 +37,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <div style={divStyle}>
+                <div style={mainBlock}>
                 {this.state.loading ?  (<div><Banner /><Load /></div>) : (<MysiteBanner />)}
                 {this.state.loading ? (<MysiteBanner />) : ''}
                 <Menu />

@@ -1,6 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 
+const clear = {
+    clear: 'both'
+};
+
 const leftColumn = {
     width: '500px',
     overflow: 'hidden'
@@ -17,14 +21,16 @@ const header = {
 
 const column = {
     color: 'white',
-    display: 'block'
+    display: 'block',
+    'margin-top': '20px',
+    'margin-bottom': '40px'
 };
 
 function renderHeaders(jsonData) {
     return jsonData.map((object, i) => {
        return (
            <div style={header} key={i}>
-               {(object.header === "") ? "&nbsp;" : object.header}
+               {(object.header === "") ? "\u00a0" : object.header}
                {renderBlocks(object.blocks)}
            </div>
        );
@@ -36,6 +42,7 @@ function renderBlocks(blocks) {
         return (
             <div style={column} key={j}>
                 <span style={leftColumn}>{(block.title === "") ? "\u00a0" : block.title }</span><span style={rightColumn}>{block.content}</span>
+                <br style={clear} />
             </div>
         );
     });
