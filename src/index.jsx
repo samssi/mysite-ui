@@ -5,6 +5,7 @@ import App from './components/App'
 import Cv from './components/cv/Cv'
 import Login from './components/login/Login'
 import styles from './fonts/font.css';
+import {requireAuthentication} from './components/security/Authenticator'
 
 ReactDOM.render((
     <Router history={browserHistory}>

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router'
+import MenuItem from './MenuItem'
 
 const ulStyle = {
     'padding-top': '10px',
@@ -30,9 +31,9 @@ const liAStyle = {
 class Menu extends React.Component {
     render() {
         return (<ul role="nav" style={ulStyle}>
-            <li style={liStyle}><Link to="/" style={liAStyle}>F1 ETUSIVU</Link></li>
-            <li style={liStyle}><Link to="/cv" style={liAStyle}>F3 CV</Link></li>
-            <li style={liStyle}><Link to="/login" style={liAStyle}>F5 LOGIN</Link></li>
+            <MenuItem to="/" text="F1 ETUSIVU"/>
+            <MenuItem to="/cv" text="F3 CV" protected="true"/>
+            <MenuItem to="/login" text="F5 LOGIN"/>
         </ul>);
     }
 }

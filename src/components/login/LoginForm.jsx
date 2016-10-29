@@ -44,7 +44,7 @@ class LoginForm extends React.Component {
             password: this.state.password
         })
             .then((response) => {
-                alert(response.data.login);
+                console.log(response.data.login);
             })
             .catch((error) => {
                 console.log(error);
