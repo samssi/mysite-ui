@@ -38,8 +38,7 @@ class App extends React.Component {
         return (
             <div>
                 <div style={mainBlock}>
-                {this.state.loading ?  (<div><Banner /><Load /></div>) : (<MysiteBanner />)}
-                {this.state.loading ? (<MysiteBanner />) : ''}
+                {this.state.loading ?  (<div><Banner /><Load /><MysiteBanner /></div>) : (<MysiteBanner />)}
                 <Menu />
                 {this.props.children}
                 {this.state.loading ? (<Cursor blinkType="blink-blue"/>) : ''}
