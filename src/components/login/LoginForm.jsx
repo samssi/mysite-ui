@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 
 const inputText = {
     border: 'none',
@@ -24,7 +25,8 @@ class LoginForm extends React.Component {
         super(props);
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            login: ''
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,8 +38,21 @@ class LoginForm extends React.Component {
         this.setState(input);
     }
 
+    doLogin() {
+        axios.post("http://localhost:8100/login",{
+            username: this.state.username,
+            password: this.state.password
+        })
+            .then((response) => {
+                alert(response.data.login);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
     handleSubmit(event) {
-        alert('username is: ' + this.state.username + ' password is: ' + this.state.password);
+        this.doLogin();
     }
 
 
