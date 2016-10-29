@@ -1,33 +1,18 @@
 import React from 'react';
 
 function isAuthenticated() {
-    return true;
+    return false;
 }
 
-function requireAuthentication(Component) {
-    class AuthenticatedComponent extends React.Component {
-        constructor(props) {
-            super(props);
-            this.state = {
-                authenticated: false
-            };
-        }
-
-        componentWillMount() {
-            this.state.authenticated = isAuthenticated();
-        }
-
-
-        render(){
-            return (<div>
-                    {
-                        this.state.authenticated ? <Component {...this.props} /> : null
-                    }
-                  </div>
-            );
-        }
+function requireAuthentication(nextState, replace) {
+    if (!isAuthenticated()) {
+        replace({
+            pathname: '/login',
+            state: {
+                nextPathname: nextState.location.pathname
+            }
+        })
     }
-    return AuthenticatedComponent;
 }
 
 export {requireAuthentication, isAuthenticated};

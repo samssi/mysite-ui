@@ -10,7 +10,7 @@ import {requireAuthentication} from './components/security/Authenticator'
 ReactDOM.render((
     <Router history={browserHistory}>
         <Route path="/" component={App}>
-            <Route path="/cv" component={Cv}/>
+            <Route path="/cv" component={Cv} onEnter={requireAuthentication}/>
             <Route path="/login" component={Login}/>
         </Route>
     </Router>
