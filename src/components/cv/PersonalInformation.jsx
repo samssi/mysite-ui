@@ -34,7 +34,8 @@ class PersonalInformation extends React.Component {
             zipCodeAndCity: '',
             phoneNumber: '',
             applicationDate: '',
-            cvTitle: ''
+            cvTitle: '',
+            picture: 'http://localhost:8090/images/c64-me-small.png'
         }
     }
 
@@ -62,6 +63,7 @@ class PersonalInformation extends React.Component {
 
     render() {
         return (<div style={personalInformation}>
+            <div style={personalInfoField}><span style={leftColumn}><img src={this.state.picture} /></span></div>
             <div style={personalInfoField}><span style={leftColumn}>{this.state.name}</span><span style={rightColumn}>{this.state.cvTitle}</span></div>
             <div style={personalInfoField}><span style={leftColumn}>{this.state.street}</span></div>
             <div style={personalInfoField}><span style={leftColumn}>{this.state.zipCodeAndCity}</span></div>
