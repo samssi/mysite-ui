@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import axios from 'axios';
+import axiosFactory from '../factory/axiosFactory';
+const axios = axiosFactory.createAxiosClient();
 
 const inputText = {
     border: 'none',
@@ -38,7 +39,7 @@ class LoginForm extends React.Component {
     }
 
     doLogin() {
-        axios.post("http://localhost:8100/login", {
+        axios.post('/login', {
             username: this.state.username,
             password: this.state.password
         })
