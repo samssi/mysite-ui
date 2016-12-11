@@ -25,8 +25,7 @@ class LoginForm extends React.Component {
         super(props);
         this.state = {
             username: '',
-            password: '',
-            login: ''
+            password: ''
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,12 +38,12 @@ class LoginForm extends React.Component {
     }
 
     doLogin() {
-        axios.post("http://localhost:8100/login",{
+        axios.post("http://localhost:8100/login", {
             username: this.state.username,
             password: this.state.password
         })
             .then((response) => {
-                console.log(response.data.login);
+                sessionStorage.setItem('jwt', response.data.token);
             })
             .catch((error) => {
                 console.log(error);
