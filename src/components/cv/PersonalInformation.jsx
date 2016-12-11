@@ -1,5 +1,6 @@
 import React from 'react';
-import axios from 'axios';
+import axiosFactory from '../factory/axiosFactory';
+const axios = axiosFactory.createAxiosContentRestClient();
 
 const leftColumn = {
     width: '500px',
@@ -40,7 +41,7 @@ class PersonalInformation extends React.Component {
     }
 
     loadPersonalInformation() {
-        axios.get('http://localhost:8090/contents/personals')
+        axios.get('/contents/personals')
             .then((response) => {
                 const json = response.data;
                 this.setState({

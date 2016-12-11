@@ -1,9 +1,15 @@
 import axios from 'axios';
 
-function createAxiosClient() {
+function createAxiosAuthRestClient() {
     return axios.create({
         baseURL: 'http://localhost:8100'
     });
 }
 
-module.exports = { createAxiosClient };
+function createAxiosContentRestClient() {
+    return axios.create({
+        baseURL: 'http://localhost:8090'
+    });
+}
+
+module.exports = { createAxiosAuthRestClient, createAxiosContentRestClient };

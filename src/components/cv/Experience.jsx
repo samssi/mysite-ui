@@ -1,5 +1,7 @@
 import React from 'react';
-import axios from 'axios';
+import axiosFactory from '../factory/axiosFactory';
+const axios = axiosFactory.createAxiosContentRestClient();
+
 
 const clear = {
     clear: 'both'
@@ -57,7 +59,7 @@ class Experience extends React.Component {
     }
 
     loadExperienceInformation() {
-        axios.get("http://localhost:8090/contents/experiences")
+        axios.get("/contents/experiences")
             .then((response) => {
                 const json = response.data;
                 this.setState({
