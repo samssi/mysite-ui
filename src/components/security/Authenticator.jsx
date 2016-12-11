@@ -1,7 +1,7 @@
 import React from 'react';
 
 function isAuthenticated() {
-    return false;
+    return sessionStorage.getItem('jwt') != null;
 }
 
 function requireAuthentication(nextState, replace) {
