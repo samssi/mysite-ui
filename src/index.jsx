@@ -6,6 +6,8 @@ import Cv from './components/cv/Cv';
 import Login from './components/login/Login';
 import './fonts/font.css';
 import {requireAuthentication} from './components/security/Authenticator';
+import axiosConfigurator from './components/factory/axiosConfigurator';
+axiosConfigurator.configureAuthorizationHeader();
 
 ReactDOM.render((
     <Router history={browserHistory}>

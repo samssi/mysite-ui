@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import axiosConfigurator from '../factory/axiosConfigurator';
 import axiosFactory from '../factory/axiosFactory';
-const axios = axiosFactory.createAxiosClient();
+const axios = axiosFactory.createAxiosAuthRestClient();
+
 
 const inputText = {
     border: 'none',
@@ -45,6 +47,7 @@ class LoginForm extends React.Component {
         })
             .then((response) => {
                 sessionStorage.setItem('jwt', response.data.token);
+                axiosConfigurator.configureAuthorizationHeader();
             })
             .catch((error) => {
                 console.log(error);
