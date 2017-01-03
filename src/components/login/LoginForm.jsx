@@ -52,6 +52,7 @@ class LoginForm extends React.Component {
                 browserHistory.push('/');
             })
             .catch((error) => {
+                // TODO: push to login and display error message
                 console.log(error);
             });
     }
