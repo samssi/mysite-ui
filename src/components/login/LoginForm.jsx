@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import axiosConfigurator from '../factory/axiosConfigurator';
 import axiosFactory from '../factory/axiosFactory';
+import { browserHistory } from 'react-router';
+
+
 const axios = axiosFactory.createAxiosAuthRestClient();
 
 
@@ -48,6 +51,7 @@ class LoginForm extends React.Component {
             .then((response) => {
                 sessionStorage.setItem('jwt', response.data.token);
                 axiosConfigurator.configureAuthorizationHeader();
+                browserHistory.push('/');
             })
             .catch((error) => {
                 console.log(error);
