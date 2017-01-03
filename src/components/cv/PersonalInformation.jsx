@@ -36,7 +36,7 @@ class PersonalInformation extends React.Component {
             phoneNumber: '',
             applicationDate: '',
             cvTitle: '',
-            picture: 'http://localhost:8090/images/c64-me-small.png'
+            picture: 'http://localhost:8090/public/static/images/c64-me-small.png'
         }
     }
 
@@ -63,6 +63,7 @@ class PersonalInformation extends React.Component {
     }
 
     render() {
+        // TODO: cannot load images because of middleware. Find another way
         return (<div style={personalInformation}>
             <div style={personalInfoField}><span style={leftColumn}><img src={this.state.picture} /></span></div>
             <div style={personalInfoField}><span style={leftColumn}>{this.state.name}</span><span style={rightColumn}>{this.state.cvTitle}</span></div>
