@@ -18,8 +18,8 @@ const column = {
 
 const personalInformation = {
     color: 'white',
-    'padding-top': '10px',
-    'padding-bottom': '10px'
+    paddingTop: '10px',
+    paddingBottom: '10px'
 };
 
 const personalInfoField = {

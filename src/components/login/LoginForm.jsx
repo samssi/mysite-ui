@@ -4,17 +4,15 @@ import axiosConfigurator from '../factory/axiosConfigurator';
 import axiosFactory from '../factory/axiosFactory';
 import { browserHistory } from 'react-router';
 
-
 const axios = axiosFactory.createAxiosAuthRestClient();
-
 
 const inputText = {
     border: 'none',
-    'border-bottom': '0px solid white',
+    borderBottom: '0px solid white',
     color: 'white',
-    'background-color': '#6076c5',
-    'font-family': 'C64',
-    'font-size': '16px',
+    backgroundColor: '#6076c5',
+    fontFamily: 'C64',
+    fontSize: '16px',
     height: '20px'
 };
 
@@ -23,7 +21,7 @@ const submitButton = {
 };
 
 const field = {
-    'margin-top': '20px'
+    marginTop: '20px'
 };
 
 class LoginForm extends React.Component {

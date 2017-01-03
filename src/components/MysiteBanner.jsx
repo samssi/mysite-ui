@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 const headerBanner = {
-    'padding-top': '20px',
-    'text-align': 'center',
-    'color': 'white',
-    'background-color': '#20398d',
+    paddingTop: '20px',
+    textAlign: 'center',
+    color: 'white',
+    backgroundColor: '#20398d',
     display: 'block'
 };
 

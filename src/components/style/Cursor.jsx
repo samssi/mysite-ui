@@ -2,17 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 function cursor(blinkType) {
-    const value = {'margin-top': '10px',
-        'width': '20px',
-        'height': '20px',
-        'animation-name': blinkType,
-        '-webkit-animation-name': blinkType,
-        '-webkit-animation-duration': '1s',
-        '-webkit-animation-iteration-count': 'infinite',
-        'animation-iteration-count': 'infinite',
-        'animation-duration': '1s',
-        '-webkit-animation-timing-function': 'linear',
-        'animation-timing-function': 'linear'};
+    const value = {
+        marginTop: '10px',
+        width: '20px',
+        height: '20px',
+        animationName: blinkType,
+        WebkitAnimationName: blinkType,
+        WebkitAnimationDuration: '1s',
+        WebkitAnimationIterationCount: 'infinite',
+        animationIterationCount: 'infinite',
+        animationDuration: '1s',
+        WebkitAnimationTimingFunction: 'linear',
+        animationTimingFunction: 'linear'};
     return value;
 }
 

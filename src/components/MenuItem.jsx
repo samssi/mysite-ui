@@ -3,20 +3,20 @@ import { Link } from 'react-router'
 import {isAuthenticated} from './security/Authenticator'
 
 const liStyle = {
-    'margin-left': '10px',
+    marginLeft: '10px',
     float: 'left'
 };
 
 
 const liAStyle = {
     display: 'block',
-    'padding-left': '20px',
-    'background-color': '#20398d',
+    paddingLeft: '20px',
+    backgroundColor: '#20398d',
     color: '#6076c5',
-    'text-align': 'center',
-    'padding-top': '20px',
-    'text-decoration': 'none',
-    'font-family': 'C64'
+    textAlign: 'center',
+    paddingTop: '20px',
+    textDecoration: 'none',
+    fontFamily: 'C64'
 };
 
 class MenuItem extends React.Component {

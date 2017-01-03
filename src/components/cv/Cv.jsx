@@ -5,8 +5,8 @@ import Experience from './Experience'
 import Cursor from '../style/Cursor'
 
 const cvBlock = {
-    'margin-top': '30px',
-    'margin-left': '30px'
+    marginTop: '30px',
+    marginLeft: '30px'
 };
 
 class Cv extends React.Component {

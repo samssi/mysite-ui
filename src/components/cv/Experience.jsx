@@ -24,8 +24,8 @@ const header = {
 const column = {
     color: 'white',
     display: 'block',
-    'margin-top': '20px',
-    'margin-bottom': '40px'
+    marginTop: '20px',
+    marginBottom: '40px'
 };
 
 function renderHeaders(jsonData) {

@@ -4,28 +4,28 @@ import { Link } from 'react-router'
 import MenuItem from './MenuItem'
 
 const ulStyle = {
-    'padding-top': '10px',
-    'background-color': '#20398d',
+    paddingTop: '10px',
+    backgroundColor: '#20398d',
     margin: '0',
     padding: '0',
     overflow: 'hidden',
-    'list-style-type': 'none'
+    listStyleType: 'none'
 };
 
 const liStyle = {
-    'margin-left': '10px',
+    marginLeft: '10px',
     float: 'left'
 };
 
 const liAStyle = {
     display: 'block',
-    'padding-left': '20px',
-    'background-color': '#20398d',
+    paddingLeft: '20px',
+    backgroundColor: '#20398d',
     color: '#6076c5',
-    'text-align': 'center',
-    'padding-top': '20px',
-    'text-decoration': 'none',
-    'font-family': 'C64'
+    textAlign: 'center',
+    paddingTop: '20px',
+    textDecoration: 'none',
+    fontFamily: 'C64'
 };
 
 class Menu extends React.Component {

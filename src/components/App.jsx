@@ -7,14 +7,14 @@ import Cursor from './style/Cursor'
 
 const mainBlock = {
     height: '200vh',
-    'background-color': '#20398d'
+    backgroundColor: '#20398d'
 };
 
 const headerBanner = {
-    'padding-top': '20px',
-    'text-align': 'center',
-    'color': '#6076c5',
-    'background-color': '#20398d',
+    paddingTop: '20px',
+    textAlign: 'center',
+    color: '#6076c5',
+    backgroundColor: '#20398d',
     display: 'block'
 };
 
