@@ -41,7 +41,7 @@ class PersonalInformation extends React.Component {
     }
 
     loadPersonalInformation() {
-        axios.get('/contents/personals')
+        axios.get('/private/contents/personals')
             .then((response) => {
                 const json = response.data;
                 this.setState({
