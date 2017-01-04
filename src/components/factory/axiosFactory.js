@@ -15,7 +15,7 @@ function createAxiosContentRestClient() {
         return response;
     }, function (error) {
         if (error.response.status = 401) {
-            console.log('Token expired. Removing token...');
+            console.info('Token expired. Removing token...');
             sessionStorage.removeItem('jwt');
             browserHistory.push('/login');
         }

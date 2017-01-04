@@ -53,7 +53,7 @@ class LoginForm extends React.Component {
             })
             .catch((error) => {
                 // TODO: push to login and display error message
-                console.log(error);
+                console.error(error);
             });
     }
 
