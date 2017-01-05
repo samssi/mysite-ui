@@ -1,14 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Cursor from '../style/Cursor'
-import Letter from './Letter'
 
 import axiosFactory from '../factory/axiosFactory';
 const axios = axiosFactory.createAxiosContentRestClient();
 
 const greetingField = {
-
+    color: 'white',
+    display: 'block',
+    marginTop: '20px',
+    marginBottom: '40px'
 };
+
+function renderParagraphs(paragraphs) {
+    return paragraphs.map((element) => {
+        return (<p>{element.paragraph}</p>);
+    });
+}
 
 class Application extends React.Component {
     constructor(props, context) {
@@ -44,8 +52,10 @@ class Application extends React.Component {
     }
 
     render() {
-        return (<div>
-                    <div style={greetingField}><span>{this.state.greeting}</span></div>
+        return (<div style={greetingField}>
+                    <div><span>{this.state.greeting}</span></div>
+                    {renderParagraphs(this.state.paragraphs)}
+                    <Cursor blinkType="blink-white" />
                   </div>
         );
     }
