@@ -5,11 +5,30 @@ import Cursor from '../style/Cursor'
 import axiosFactory from '../factory/axiosFactory';
 const axios = axiosFactory.createAxiosContentRestClient();
 
-const greetingField = {
+const applicationTemplate = {
     color: 'white',
     display: 'block',
     marginTop: '20px',
-    marginBottom: '40px'
+    marginBottom: '40px',
+    padding: '30px'
+};
+
+const greetingColumn = {
+    marginBottom: '20px'
+};
+
+const signatureBlock = {
+    marginTop: '75px'
+};
+
+const leftColumn = {
+    width: '500px',
+    overflow: 'hidden'
+};
+
+const rightColumn = {
+    width: '300px',
+    float: 'right'
 };
 
 function renderParagraphs(paragraphs) {
@@ -52,9 +71,13 @@ class Application extends React.Component {
     }
 
     render() {
-        return (<div style={greetingField}>
-                    <div><span>{this.state.greeting}</span></div>
+        return (<div style={applicationTemplate}>
+                    <div style={greetingColumn}>{this.state.greeting}</div>
                     {renderParagraphs(this.state.paragraphs)}
+                    <div style={signatureBlock}>
+                        <div><span style={leftColumn}>{"\u00a0"}</span><span style={rightColumn}>{this.state.signatureTitle}</span></div>
+                        <div><span style={leftColumn}>{"\u00a0"}</span><span style={rightColumn}>{this.state.signature}</span></div>
+                    </div>
                     <Cursor blinkType="blink-white" />
                   </div>
         );
