@@ -32,8 +32,8 @@ const rightColumn = {
 };
 
 function renderParagraphs(paragraphs) {
-    return paragraphs.map((element) => {
-        return (<p>{element.paragraph}</p>);
+    return paragraphs.map((element, i) => {
+        return (<p key={i}>{element.paragraph}</p>);
     });
 }
 
