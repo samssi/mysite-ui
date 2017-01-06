@@ -4,6 +4,33 @@ import Cursor from '../style/Cursor'
 import axiosFactory from '../factory/axiosFactory';
 const axios = axiosFactory.createAxiosContentRestClient();
 
+const portfolio = {
+    display: 'block',
+    marginTop: '20px',
+    marginBottom: '40px',
+    padding: '30px'
+};
+
+const company = {
+    color: 'yellow'
+};
+
+const assignment = {
+    marginBottom: '40px'
+};
+
+const year = {
+    color: 'white'
+};
+
+const assignmentDescription = {
+    color: 'white'
+};
+
+const technology = {
+    color: 'grey'
+};
+
 class Application extends React.Component {
     constructor(props, context) {
         super(props, context);
@@ -29,7 +56,7 @@ class Application extends React.Component {
     }
 
     render() {
-        return (<div>
+        return (<div style={portfolio}>
                 <div>{renderCompanies(this.state.jsonData)}</div>
             </div>
         )
@@ -39,7 +66,7 @@ class Application extends React.Component {
 function renderCompanies(jsonData) {
     return jsonData.map((element, i) => {
         return (
-            <div key={i}>
+            <div key={i} style={company}>
                 {element.company}
                 {renderAssignments(element.assignments)}
             </div>
@@ -50,8 +77,8 @@ function renderCompanies(jsonData) {
 function renderAssignments(assignments) {
     return assignments.map((element, i) => {
         return (
-            <div key={i}>
-                {element.year}
+            <div key={i} style={assignment}>
+                <span style={year}>{element.year}</span>
                 {renderAssignmentDescription(element.paragraphs)}
                 {renderTechnologies(element.technologies)}
             </div>
@@ -62,7 +89,7 @@ function renderAssignments(assignments) {
 function renderAssignmentDescription(paragraphs) {
     return paragraphs.map((element, i) => {
         return (
-            <p key={i}>
+            <p key={i} style={assignmentDescription}>
                 {element.paragraph}
             </p>
         );
@@ -70,7 +97,7 @@ function renderAssignmentDescription(paragraphs) {
 }
 
 function renderTechnologies(technologies) {
-    return ( <div>({technologies.join(", ")})</div>);
+    return ( <div style={technology}>({technologies.join(", ")})</div>);
 }
 
 export default Application;
