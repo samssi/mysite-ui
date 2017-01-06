@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Cursor from '../style/Cursor'
 
 import axiosFactory from '../factory/axiosFactory';
@@ -30,12 +29,6 @@ const rightColumn = {
     width: '300px',
     float: 'right'
 };
-
-function renderParagraphs(paragraphs) {
-    return paragraphs.map((element, i) => {
-        return (<p key={i}>{element.paragraph}</p>);
-    });
-}
 
 class Application extends React.Component {
     constructor(props, context) {
@@ -69,10 +62,16 @@ class Application extends React.Component {
         this.loadApplication();
     }
 
+    renderParagraphs(paragraphs) {
+        return paragraphs.map((element, i) => {
+            return (<p key={i}>{element.paragraph}</p>);
+        });
+    }
+
     render() {
         return (<div style={applicationTemplate}>
                     <div style={greetingColumn}>{this.state.greeting}</div>
-                    {renderParagraphs(this.state.paragraphs)}
+                    {this.renderParagraphs(this.state.paragraphs)}
                     <div style={signatureBlock}>
                         <div><span style={leftColumn}>{"\u00a0"}</span><span style={rightColumn}>{this.state.signatureTitle}</span></div>
                         <div><span style={leftColumn}>{"\u00a0"}</span><span style={rightColumn}>{this.state.signature}</span></div>

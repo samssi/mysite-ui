@@ -55,49 +55,49 @@ class Application extends React.Component {
         this.loadPortfolio();
     }
 
+    renderCompanies(jsonData) {
+        return jsonData.map((element, i) => {
+            return (
+                <div key={i} style={company}>
+                    {element.company}
+                    {this.renderAssignments(element.assignments)}
+                </div>
+            );
+        });
+    }
+
+    renderAssignments(assignments) {
+        return assignments.map((element, i) => {
+            return (
+                <div key={i} style={assignment}>
+                    <span style={year}>{element.year}</span>
+                    {this.renderAssignmentDescription(element.paragraphs)}
+                    {this.renderTechnologies(element.technologies)}
+                </div>
+            );
+        });
+    }
+
+    renderAssignmentDescription(paragraphs) {
+        return paragraphs.map((element, i) => {
+            return (
+                <p key={i} style={assignmentDescription}>
+                    {element.paragraph}
+                </p>
+            );
+        });
+    }
+
+    renderTechnologies(technologies) {
+        return ( <div style={technology}>({technologies.join(", ")})</div>);
+    }
+
     render() {
         return (<div style={portfolio}>
-                <div>{renderCompanies(this.state.jsonData)}</div>
+                <div>{this.renderCompanies(this.state.jsonData)}</div>
             </div>
         )
     }
-}
-
-function renderCompanies(jsonData) {
-    return jsonData.map((element, i) => {
-        return (
-            <div key={i} style={company}>
-                {element.company}
-                {renderAssignments(element.assignments)}
-            </div>
-        );
-    });
-}
-
-function renderAssignments(assignments) {
-    return assignments.map((element, i) => {
-        return (
-            <div key={i} style={assignment}>
-                <span style={year}>{element.year}</span>
-                {renderAssignmentDescription(element.paragraphs)}
-                {renderTechnologies(element.technologies)}
-            </div>
-        );
-    });
-}
-
-function renderAssignmentDescription(paragraphs) {
-    return paragraphs.map((element, i) => {
-        return (
-            <p key={i} style={assignmentDescription}>
-                {element.paragraph}
-            </p>
-        );
-    });
-}
-
-function renderTechnologies(technologies) {
-    return ( <div style={technology}>({technologies.join(", ")})</div>);
 }
 
 export default Application;

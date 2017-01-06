@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axiosConfigurator from '../factory/axiosConfigurator';
 import axiosFactory from '../factory/axiosFactory';
 import { browserHistory } from 'react-router';

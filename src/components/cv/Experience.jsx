@@ -19,7 +19,7 @@ const rightColumn = {
 
 const header = {
     color: 'white'
-}
+};
 
 const column = {
     color: 'white',
@@ -27,28 +27,6 @@ const column = {
     marginTop: '20px',
     marginBottom: '40px'
 };
-
-function renderHeaders(jsonData) {
-    return jsonData.map((object, i) => {
-       return (
-           <div style={header} key={i}>
-               {(object.header === "") ? "\u00a0" : object.header}
-               {renderBlocks(object.blocks)}
-           </div>
-       );
-    });
-}
-
-function renderBlocks(blocks) {
-    return blocks.map((block, j) => {
-        return (
-            <div style={column} key={j}>
-                <span style={leftColumn}>{(block.title === "") ? "\u00a0" : block.title }</span><span style={rightColumn}>{block.content}</span>
-                <br style={clear} />
-            </div>
-        );
-    });
-}
 
 class Experience extends React.Component {
     constructor(props, context) {
@@ -71,13 +49,36 @@ class Experience extends React.Component {
             });
     }
 
+    renderHeaders(jsonData) {
+        return jsonData.map((object, i) => {
+            return (
+                <div style={header} key={i}>
+                    {(object.header === "") ? "\u00a0" : object.header}
+                    {this.renderBlocks(object.blocks)}
+                </div>
+            );
+        });
+    }
+
+    renderBlocks(blocks) {
+        return blocks.map((block, j) => {
+            return (
+                <div style={column} key={j}>
+                    <span style={leftColumn}>{(block.title === "") ? "\u00a0" : block.title }</span><span style={rightColumn}>{block.content}</span>
+                    <br style={clear} />
+                </div>
+            );
+        });
+    }
+
+
     componentDidMount() {
         this.loadExperienceInformation();
     }
 
     render() {
         return (<div className="experienceInformation">
-            {renderHeaders(this.state.jsonData)}
+            {this.renderHeaders(this.state.jsonData)}
         </div>);
     }
 }
