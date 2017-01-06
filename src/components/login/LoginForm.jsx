@@ -17,7 +17,15 @@ const inputText = {
 };
 
 const submitButton = {
-    cursor: 'pointer'
+    cursor: 'pointer',
+    background: 'none',
+    border: 'none',
+    borderBottom: '0px solid white',
+    color: 'white',
+    backgroundColor: '#20398d',
+    fontFamily: 'C64',
+    fontSize: '16px',
+    height: '20px'
 };
 
 const field = {
@@ -58,12 +66,13 @@ class LoginForm extends React.Component {
     }
 
     handleSubmit(event) {
+        event.preventDefault();
         this.doLogin();
     }
 
 
-    render() {
-        return (<div>
+    render() {return (<div>
+        <form onSubmit={this.handleSubmit}>
             <div style={field}>
                 <input style={inputText}
                        type="text"
@@ -72,20 +81,18 @@ class LoginForm extends React.Component {
                        onChange={this.handleChange.bind(this, 'username')} />
             </div>
             <div style={field}>
-            <input style={inputText}
-                   type="password"
-                   placeholder="Password..."
-                   value={this.state.value}
-                   onChange={this.handleChange.bind(this, 'password')} />
+                <input style={inputText}
+                       type="password"
+                       placeholder="Password..."
+                       value={this.state.value}
+                       onChange={this.handleChange.bind(this, 'password')} />
             </div>
             <div style={field}>
-            <div style={submitButton} onClick={this.handleSubmit}>
-                Login
+                <input style={submitButton} type="submit" value="Login"/>
             </div>
-            </div>
-        </div>)
+            </form>
+        </div>)}
 
-    }
 }
 
 export default LoginForm;
