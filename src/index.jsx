@@ -4,6 +4,7 @@ import {Router, Route, browserHistory} from 'react-router';
 import App from './components/App';
 import Cv from './components/cv/Cv';
 import Login from './components/login/Login';
+import Logout from './components/login/Logout';
 import Application from './components/application/Application';
 import Portfolio from './components/portfolio/Portfolio';
 import './fonts/font.css';
@@ -18,6 +19,7 @@ ReactDOM.render((
             <Route path="/login" component={Login}/>
             <Route path="/application" component={Application} onEnter={requireAuthentication}/>
             <Route path="/portfolio" component={Portfolio} onEnter={requireAuthentication}/>
+            <Route path="/logout" component={Logout}/>
         </Route>
     </Router>
 ), document.getElementById('app'));

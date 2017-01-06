@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router'
 import MenuItem from './MenuItem'
+import LoginItem from './LoginItem'
 
 const ulStyle = {
     paddingTop: '10px',
@@ -35,7 +36,7 @@ class Menu extends React.Component {
             <MenuItem to="/cv" text="F3 CV" protected="true"/>
             <MenuItem to="/application" text="F5 APPLICATION" protected="true"/>
             <MenuItem to="/portfolio" text="Portfolio" protected="true"/>
-            <MenuItem to="/login" text="F7 LOGIN"/>
+            <LoginItem />
         </ul>);
     }
 }
