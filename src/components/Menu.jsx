@@ -33,7 +33,8 @@ class Menu extends React.Component {
         return (<ul role="nav" style={ulStyle}>
             <MenuItem to="/" text="F1 ETUSIVU"/>
             <MenuItem to="/cv" text="F3 CV" protected="true"/>
-            <MenuItem to='/application' text="F5 APPLICATION" protected="true"/>
+            <MenuItem to="/application" text="F5 APPLICATION" protected="true"/>
+            <MenuItem to="/portfolio" text="Portfolio" protected="true"/>
             <MenuItem to="/login" text="F7 LOGIN"/>
         </ul>);
     }
