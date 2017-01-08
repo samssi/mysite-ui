@@ -4,13 +4,6 @@ import Cursor from '../style/Cursor'
 import axiosFactory from '../factory/axiosFactory';
 const axios = axiosFactory.createAxiosContentRestClient();
 
-const portfolio = {
-    display: 'block',
-    marginTop: '20px',
-    marginBottom: '40px',
-    padding: '30px'
-};
-
 const company = {
     color: 'yellow'
 };
@@ -93,7 +86,7 @@ class Application extends React.Component {
     }
 
     render() {
-        return (<div style={portfolio}>
+        return (<div>
                 <div>{this.renderCompanies(this.state.jsonData)}</div>
             </div>
         )

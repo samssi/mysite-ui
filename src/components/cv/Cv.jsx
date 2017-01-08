@@ -4,18 +4,11 @@ import PersonalInformation from './PersonalInformation'
 import Experience from './Experience'
 import Cursor from '../style/Cursor'
 
-const cvBlock = {
-    marginTop: '30px',
-    marginLeft: '30px'
-};
-
 class Cv extends React.Component {
     render() {
         return (<div>
-                    <div style={cvBlock}>
-                        <PersonalInformation />
-                        <Experience />
-                    </div>
+                    <PersonalInformation />
+                    <Experience />
                     <Cursor blinkType="blink-white" />
                 </div>);
     }

@@ -29,7 +29,7 @@ const submitButton = {
 };
 
 const field = {
-    marginTop: '20px'
+    marginBottom: '20px'
 };
 
 class LoginForm extends React.Component {

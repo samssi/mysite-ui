@@ -18,6 +18,13 @@ const headerBanner = {
     display: 'block'
 };
 
+const children = {
+    color: 'white',
+    display: 'block',
+    marginBottom: '40px',
+    padding: '30px'
+};
+
 class App extends React.Component {
     constructor(props, context) {
         super(props, context);
@@ -40,7 +47,9 @@ class App extends React.Component {
                 <div style={mainBlock}>
                 {this.state.loading ?  (<div><Banner /><Load /><MysiteBanner /></div>) : (<MysiteBanner />)}
                 <Menu />
+                <div style={children}>
                 {this.props.children}
+                </div>
                 {this.state.loading ? (<Cursor blinkType="blink-blue"/>) : ''}
                 </div>
             </div>

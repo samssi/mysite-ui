@@ -4,14 +4,6 @@ import Cursor from '../style/Cursor'
 import axiosFactory from '../factory/axiosFactory';
 const axios = axiosFactory.createAxiosContentRestClient();
 
-const applicationTemplate = {
-    color: 'white',
-    display: 'block',
-    marginTop: '20px',
-    marginBottom: '40px',
-    padding: '30px'
-};
-
 const greetingColumn = {
     marginBottom: '20px'
 };
@@ -69,7 +61,7 @@ class Application extends React.Component {
     }
 
     render() {
-        return (<div style={applicationTemplate}>
+        return (<div>
                     <div style={greetingColumn}>{this.state.greeting}</div>
                     {this.renderParagraphs(this.state.paragraphs)}
                     <div style={signatureBlock}>
