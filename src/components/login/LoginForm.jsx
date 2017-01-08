@@ -1,6 +1,7 @@
 import React from 'react';
 import axiosConfigurator from '../factory/axiosConfigurator';
 import axiosFactory from '../factory/axiosFactory';
+import LoginError from './LoginError';
 import { browserHistory } from 'react-router';
 
 const axios = axiosFactory.createAxiosAuthRestClient();
@@ -36,7 +37,9 @@ class LoginForm extends React.Component {
         super(props);
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            loginFailed: false,
+            loginFailureMessage: ''
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -58,10 +61,21 @@ class LoginForm extends React.Component {
                 axiosConfigurator.configureAuthorizationHeader();
                 browserHistory.push('/');
             })
-            .catch((error) => {
-                // TODO: push to login and display error message
-                console.error(error);
-            });
+            .catch((error) => { this.handleErrors(error); });
+    }
+
+    handleErrors(error) {
+        if (error.response === undefined) {
+            console.log('network');
+            this.state.loginFailed = true;
+            this.state.loginFailureMessage = "Authentication service down :( Please try again later";
+        }
+        else if (error.response.status === 401) {
+            console.log('other');
+            this.state.loginFailed = true;
+            this.state.loginFailureMessage = "Username or password not correct!";
+        }
+        this.setState(this.state);
     }
 
     handleSubmit(event) {
@@ -71,6 +85,7 @@ class LoginForm extends React.Component {
 
 
     render() {return (<div>
+        {this.state.loginFailed ? <LoginError errorMessage={this.state.loginFailureMessage}/> : false}
         <form onSubmit={this.handleSubmit}>
             <div style={field}>
                 <input style={inputText}
@@ -89,8 +104,8 @@ class LoginForm extends React.Component {
             <div style={field}>
                 <input style={submitButton} type="submit" value="Login"/>
             </div>
-            </form>
-        </div>)}
+        </form>
+    </div>)}
 
 }
 
