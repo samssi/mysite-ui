@@ -32,10 +32,11 @@ const liAStyle = {
 class Menu extends React.Component {
     render() {
         return (<ul role="nav" style={ulStyle}>
-            <MenuItem to="/" text="F1 ETUSIVU"/>
-            <MenuItem to="/cv" text="F3 CV" protected="true"/>
-            <MenuItem to="/application" text="F5 APPLICATION" protected="true"/>
-            <MenuItem to="/portfolio" text="Portfolio" protected="true"/>
+            <MenuItem to="/" text="FRONTPAGE"/>
+            <MenuItem to="/cv" text="CV" protected="true"/>
+            <MenuItem to="/application" text="APPLICATION" protected="true"/>
+            <MenuItem to="/portfolio" text="PORTFOLIO" protected="true"/>
+            <MenuItem to="/about" text="ABOUT" protected="true"/>
             <LoginItem />
         </ul>);
     }

@@ -6,6 +6,7 @@ import Cv from './components/cv/Cv';
 import Login from './components/login/Login';
 import Logout from './components/login/Logout';
 import Application from './components/application/Application';
+import About from './components/about/About';
 import Portfolio from './components/portfolio/Portfolio';
 import './fonts/font.css';
 import {requireAuthentication} from './components/security/Authenticator';
@@ -19,6 +20,7 @@ ReactDOM.render((
             <Route path="/login" component={Login}/>
             <Route path="/application" component={Application} onEnter={requireAuthentication}/>
             <Route path="/portfolio" component={Portfolio} onEnter={requireAuthentication}/>
+            <Route path="/about" component={About} />
             <Route path="/logout" component={Logout}/>
         </Route>
     </Router>
