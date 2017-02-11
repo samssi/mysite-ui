@@ -12,7 +12,8 @@ class About extends React.Component {
         this.state = {
             header: '',
             description: '',
-            technologies: []
+            technologies: [],
+            services: []
         }
     }
 
@@ -23,6 +24,7 @@ class About extends React.Component {
                 this.setState({
                     header: json.header,
                     description: json.description,
+                    services: json.services,
                     technologies: json.technologies
                 });
             })
@@ -36,14 +38,26 @@ class About extends React.Component {
     }
 
     renderTechnologies(technologies) {
-        return (<div>Technologies used: {technologies.join(", ")}</div>);
+        return (<div>Technologies used to create this site: {technologies.join(", ")}.</div>);
+    }
+
+    renderServices(services) {
+        return services.map((element, i) => {
+            return (<div key={i}>
+                        <p>{element.title}</p>
+                        <p key={i}>{element.description}</p>
+                        <p><a href={element.github}>{element.github}</a></p>
+                    </div>
+            );
+        });
     }
 
     render() {
         return (<div style={about}>
             <div>{this.state.header}</div>
             <div>{this.state.description}</div>
-            {this.renderTechnologies(this.state.technologies)}
+            <div>{this.renderTechnologies(this.state.technologies)}</div>
+            <div>This project consist of following services:{this.renderServices(this.state.services)}</div>
         </div>);
     }
 }
