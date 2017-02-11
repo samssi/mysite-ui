@@ -37,7 +37,7 @@ class Experience extends React.Component {
     }
 
     loadExperienceInformation() {
-        axios.get("/private/contents/experiences")
+        axios.get("/private/contents/experience")
             .then((response) => {
                 const json = response.data;
                 this.setState({

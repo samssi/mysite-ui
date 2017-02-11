@@ -36,7 +36,7 @@ class Application extends React.Component {
     }
 
     loadApplication() {
-        axios.get('/private/contents/applications')
+        axios.get('/private/contents/application')
             .then((response) => {
                 const json = response.data;
                 this.setState({

@@ -34,7 +34,7 @@ class Application extends React.Component {
     }
 
     loadPortfolio() {
-        axios.get('/private/contents/portfolios')
+        axios.get('/private/contents/portfolio')
             .then((response) => {
                 this.setState({
                     jsonData: response.data
