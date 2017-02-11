@@ -1,5 +1,6 @@
 import React from 'react';
 import Cursor from '../style/Cursor'
+import Paragraphs from '../common/Paragraphs'
 
 import axiosFactory from '../factory/axiosFactory';
 const axios = axiosFactory.createAxiosContentRestClient();
@@ -64,19 +65,9 @@ class Application extends React.Component {
             return (
                 <div key={i} style={assignment}>
                     <span style={year}>{element.year}</span>
-                    {this.renderAssignmentDescription(element.paragraphs)}
+                    <div style={assignmentDescription}><Paragraphs paragraphs={element.paragraphs} /></div>
                     {this.renderTechnologies(element.technologies)}
                 </div>
-            );
-        });
-    }
-
-    renderAssignmentDescription(paragraphs) {
-        return paragraphs.map((element, i) => {
-            return (
-                <p key={i} style={assignmentDescription}>
-                    {element.paragraph}
-                </p>
             );
         });
     }

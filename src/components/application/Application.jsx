@@ -1,4 +1,5 @@
 import React from 'react';
+import Paragraphs from '../common/Paragraphs'
 import Cursor from '../style/Cursor'
 
 import axiosFactory from '../factory/axiosFactory';
@@ -54,16 +55,10 @@ class Application extends React.Component {
         this.loadApplication();
     }
 
-    renderParagraphs(paragraphs) {
-        return paragraphs.map((element, i) => {
-            return (<p key={i}>{element.paragraph}</p>);
-        });
-    }
-
     render() {
         return (<div>
                     <div style={greetingColumn}>{this.state.greeting}</div>
-                    {this.renderParagraphs(this.state.paragraphs)}
+                    <Paragraphs paragraphs={this.state.paragraphs}/>
                     <div style={signatureBlock}>
                         <div><span style={leftColumn}>{"\u00a0"}</span><span style={rightColumn}>{this.state.signatureTitle}</span></div>
                         <div><span style={leftColumn}>{"\u00a0"}</span><span style={rightColumn}>{this.state.signature}</span></div>
