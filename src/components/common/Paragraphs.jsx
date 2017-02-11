@@ -8,7 +8,6 @@ class Paragraphs extends React.Component {
     }
 
     render() {
-        console.log(this.props.paragraphs);
         return (<div>{this.renderParagraphs(this.props.paragraphs)}</div>);
     }
 }
