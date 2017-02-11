@@ -1,10 +1,32 @@
 import React from 'react';
+import Cursor from '../style/Cursor'
 import axiosFactory from '../factory/axiosFactory';
 const axios = axiosFactory.createAxiosContentRestClient();
 
-const about = {
+
+const header = {
+    color: 'yellow',
+    marginBottom: '20px'
+};
+
+const description = {
+    color: 'white',
+    marginBottom: '20px'
+};
+
+const technologies = {
+    color: 'white',
+    marginBottom: '20px'
+};
+
+const serviceDescription = {
     color: 'white'
 };
+
+const link = {
+    color: 'red'
+}
+
 
 class About extends React.Component {
     constructor(props, context) {
@@ -43,21 +65,22 @@ class About extends React.Component {
 
     renderServices(services) {
         return services.map((element, i) => {
-            return (<div key={i}>
-                        <p>{element.title}</p>
+            return (<div key={i} style={serviceDescription}>
+                        <p style={header}>{element.title}</p>
                         <p key={i}>{element.description}</p>
-                        <p><a href={element.github}>{element.github}</a></p>
+                        <p><a style={link} href={element.github}>{element.github}</a></p>
                     </div>
             );
         });
     }
 
     render() {
-        return (<div style={about}>
-            <div>{this.state.header}</div>
-            <div>{this.state.description}</div>
-            <div>{this.renderTechnologies(this.state.technologies)}</div>
-            <div>This project consist of following services:{this.renderServices(this.state.services)}</div>
+        return (<div>
+            <div style={header}>{this.state.header}</div>
+            <div style={description}>{this.state.description}</div>
+            <div style={technologies}>{this.renderTechnologies(this.state.technologies)}</div>
+            <div style={header}>This project consist of following services:{this.renderServices(this.state.services)}</div>
+            <Cursor blinkType="blink-red" />
         </div>);
     }
 }
