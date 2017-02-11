@@ -10,7 +10,9 @@ class About extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            document: ''
+            header: '',
+            description: '',
+            technologies: []
         }
     }
 
@@ -19,7 +21,9 @@ class About extends React.Component {
             .then((response) => {
                 const json = response.data;
                 this.setState({
-                    document: json
+                    header: json.header,
+                    description: json.description,
+                    technologies: json.technologies
                 });
             })
             .catch((error) => {
@@ -31,11 +35,15 @@ class About extends React.Component {
         this.loadAbout();
     }
 
+    renderTechnologies(technologies) {
+        return (<div>Technologies used: {technologies.join(", ")}</div>);
+    }
+
     render() {
-        const document = this.state.document;
         return (<div style={about}>
-            <div>{document.header}</div>
-            <div>{document.header}</div>
+            <div>{this.state.header}</div>
+            <div>{this.state.description}</div>
+            {this.renderTechnologies(this.state.technologies)}
         </div>);
     }
 }
