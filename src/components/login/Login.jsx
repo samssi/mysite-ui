@@ -7,7 +7,6 @@ class Login extends React.Component {
         return (<div>
                     <p>Please provide your credentials here</p>
                     <LoginForm />
-                    <Cursor blinkType="blink-white" />
                 </div>)
 
     }

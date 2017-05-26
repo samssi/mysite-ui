@@ -20,7 +20,7 @@ ReactDOM.render((
             <Route path="/login" component={Login}/>
             <Route path="/application" component={Application} onEnter={requireAuthentication}/>
             <Route path="/portfolio" component={Portfolio} onEnter={requireAuthentication}/>
-            <Route path="/about" component={About} />
+            <Route path="/about" component={About} onEnter={requireAuthentication}/>
             <Route path="/logout" component={Logout}/>
         </Route>
     </Router>
