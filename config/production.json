@@ -1,0 +1,8 @@
+{
+  "ContentApi": {
+    "connectionUrl": "http://tbd:8090"
+  },
+  "AuthApi": {
+    "connectionUrl": "http://tbd:8100"
+  }
+}
