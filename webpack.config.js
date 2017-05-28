@@ -26,6 +26,9 @@ module.exports = {
     resolve: {
         extensions: ['', '.js', '.jsx', '.css', '.eot', '.ttf', '.woff', '.woff2']
     },
+    externals: {
+        'Config': JSON.stringify(process.env.ENV === 'production' ? require('./config/production.json') : require('./config/default.json'))
+    },
     output: {
         path: __dirname + '/dist',
         publicPath: '/',

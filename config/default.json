@@ -1,0 +1,8 @@
+{
+  "ContentApi": {
+    "connectionUrl": "http://localhost:8090"
+  },
+  "AuthApi": {
+    "connectionUrl": "http://localhost:8100"
+  }
+}

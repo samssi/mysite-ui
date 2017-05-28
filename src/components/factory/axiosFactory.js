@@ -1,15 +1,17 @@
 import axios from 'axios';
+import config from 'Config';
+
 import { browserHistory } from 'react-router';
 
 function createAxiosAuthRestClient() {
     return axios.create({
-        baseURL: 'http://localhost:8100'
+        baseURL: config.AuthApi
     });
 }
 
 function createAxiosContentRestClient() {
     const client = axios.create({
-        baseURL: 'http://localhost:8090'
+        baseURL: config.ContentApi
     });
     client.interceptors.response.use(function(response) {
         return response;
