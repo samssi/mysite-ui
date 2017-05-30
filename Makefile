@@ -9,7 +9,7 @@ build-docker-image:
 	docker build -t mysite/mysite-ui .
 
 build-docker-prod-image:
-	ENV=production webpack
+	webpack
 	docker build -t mysite/mysite-ui .
 
 run-docker-image:
