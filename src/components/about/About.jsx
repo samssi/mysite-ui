@@ -68,7 +68,7 @@ class About extends React.Component {
             return (<div key={i} style={serviceDescription}>
                         <p style={header}>{element.title}</p>
                         <p key={i}>{element.description}</p>
-                        <p><a style={link} href={element.github}>{element.github}</a></p>
+                        <p><a style={link} target="_blank" href={element.github}>{element.github}</a></p>
                     </div>
             );
         });
