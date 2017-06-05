@@ -9,6 +9,7 @@ build-docker-image:
 	docker build -t mysite/mysite-ui .
 
 build-docker-prod-image:
+	rm -rf dist/
 	webpack
 	docker build -t mysite/mysite-ui .
 
