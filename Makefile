@@ -5,6 +5,7 @@ run-prod:
 	ENV=production webpack-dev-server
 
 build-docker-image:
+	rm -rf dist/
 	webpack
 	docker build -t mysite/mysite-ui .
 
