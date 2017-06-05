@@ -11,7 +11,7 @@ build-docker-image:
 
 build-docker-prod-image:
 	rm -rf dist/
-	webpack
+	NODE_ENV=production webpack
 	docker build -t mysite/mysite-ui .
 
 run-docker-image:
