@@ -14,11 +14,11 @@ const DefinePluginConfig = new webpack.DefinePlugin({
 });
 
 function setupAuthApi() {
-  return process.env.NODE_ENV == "production" ? "https://mysite.samssi.com/auth/api/v1" : 'http://localhost:8100/api/v1';
+  return process.env.NODE_ENV == "production" ? "https://mysite.samssi.com/api/v1/auth" : 'http://localhost:8100/api/v1';
 }
 
 function setupContentApi() {
-  return process.env.NODE_ENV == "production" ? "https://mysite.samssi.com/content/api/v1" : "http://localhost:8090/api/v1";
+  return process.env.NODE_ENV == "production" ? "https://mysite.samssi.com/api/v1/content" : "http://localhost:8090/api/v1";
 }
 
 module.exports = {
