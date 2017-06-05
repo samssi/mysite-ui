@@ -14,11 +14,11 @@ const DefinePluginConfig = new webpack.DefinePlugin({
 });
 
 function setupAuthApi() {
-  return process.env.NODE_ENV == "production" ? "https://tbd" : 'http://localhost:8090/api/v1';
+  return process.env.NODE_ENV == "production" ? "https://tbd" : 'http://localhost:8100/api/v1';
 }
 
 function setupContentApi() {
-  return process.env.NODE_ENV == "production" ? "https://tbd" : "http://localhost:8100/api/v1";
+  return process.env.NODE_ENV == "production" ? "https://tbd" : "http://localhost:8090/api/v1";
 }
 
 module.exports = {
