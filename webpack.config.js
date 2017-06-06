@@ -11,7 +11,8 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 
 const DefinePluginConfig = new webpack.DefinePlugin({
   __AUTH_API_URL__: JSON.stringify(setupAuthApi()),
-  __CONTENT_API_URL__: JSON.stringify(setupContentApi())
+  __CONTENT_API_URL__: JSON.stringify(setupContentApi()),
+  __IMAGES_API_URL__: JSON.stringify(setupImagesApi())
 });
 
 function setupAuthApi() {
@@ -20,6 +21,10 @@ function setupAuthApi() {
 
 function setupContentApi() {
   return process.env.NODE_ENV == "production" ? "https://mysite.samssi.com/api/v1/content" : "http://localhost:8090/api/v1/content";
+}
+
+function setupImagesApi() {
+  return process.env.NODE_ENV == "production" ? "https://mysite.samssi.com/api/v1/content/public/static/images/" : "http://localhost:8090/api/v1/content/public/static/images/";
 }
 
 module.exports = {

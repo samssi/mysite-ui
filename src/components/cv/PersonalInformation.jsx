@@ -36,7 +36,7 @@ class PersonalInformation extends React.Component {
             phoneNumber: "",
             applicationDate: "",
             cvTitle: "",
-            picture: "http://localhost:8090/public/static/images/c64-me-small.png"
+            picture: ""
         }
     }
 
@@ -50,7 +50,8 @@ class PersonalInformation extends React.Component {
                     zipCodeAndCity: json.address.zipcode + " " + json.address.city,
                     phoneNumber: json.phoneNumber,
                     applicationDate: json.applicationDate,
-                    cvTitle: json.title
+                    cvTitle: json.title,
+                    picture: __IMAGES_API_URL__ + json.picture
                 });
             })
             .catch((error) => {
