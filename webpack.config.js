@@ -16,15 +16,15 @@ const DefinePluginConfig = new webpack.DefinePlugin({
 });
 
 function setupAuthApi() {
-  return process.env.NODE_ENV == "production" ? "https://mysite.samssi.com/api/v1/auth" : "http://localhost:8100/api/v1/auth";
+  return process.env.APP_CONTEXT == "production" ? "https://mysite.samssi.com/api/v1/auth" : "http://localhost:8100/api/v1/auth";
 }
 
 function setupContentApi() {
-  return process.env.NODE_ENV == "production" ? "https://mysite.samssi.com/api/v1/content" : "http://localhost:8090/api/v1/content";
+  return process.env.APP_CONTEXT == "production" ? "https://mysite.samssi.com/api/v1/content" : "http://localhost:8090/api/v1/content";
 }
 
 function setupImagesApi() {
-  return process.env.NODE_ENV == "production" ? "https://mysite.samssi.com/api/v1/content/public/static/images/" : "http://localhost:8090/api/v1/content/public/static/images/";
+  return process.env.APP_CONTEXT == "production" ? "https://mysite.samssi.com/api/v1/content/public/static/images/" : "http://localhost:8090/api/v1/content/public/static/images/";
 }
 
 module.exports = {
