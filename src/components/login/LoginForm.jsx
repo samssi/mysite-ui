@@ -10,7 +10,7 @@ const inputText = {
     border: 'none',
     borderBottom: '0px solid white',
     color: 'white',
-    backgroundColor: '#6076c5',
+    backgroundColor: 'black',
     fontFamily: 'C64',
     fontSize: '16px',
     height: '20px'
