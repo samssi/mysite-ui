@@ -10,22 +10,10 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 });
 
 const DefinePluginConfig = new webpack.DefinePlugin({
-  __AUTH_API_URL__: JSON.stringify(setupAuthApi()),
-  __CONTENT_API_URL__: JSON.stringify(setupContentApi()),
-  __IMAGES_API_URL__: JSON.stringify(setupImagesApi())
+  __AUTH_API_URL__: JSON.stringify("http://localhost:8100/api/v1/auth"),
+  __CONTENT_API_URL__: JSON.stringify("http://localhost:8090/api/v1/content"),
+  __IMAGES_API_URL__: JSON.stringify("http://localhost:8090/api/v1/content/public/static/images/")
 });
-
-function setupAuthApi() {
-  return process.env.APP_CONTEXT == "production" ? "https://mysite.samssi.com/api/v1/auth" : "http://localhost:8100/api/v1/auth";
-}
-
-function setupContentApi() {
-  return process.env.APP_CONTEXT == "production" ? "https://mysite.samssi.com/api/v1/content" : "http://localhost:8090/api/v1/content";
-}
-
-function setupImagesApi() {
-  return process.env.APP_CONTEXT == "production" ? "https://mysite.samssi.com/api/v1/content/public/static/images/" : "http://localhost:8090/api/v1/content/public/static/images/";
-}
 
 module.exports = {
   entry: "./src/index.jsx",
