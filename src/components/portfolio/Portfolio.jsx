@@ -79,6 +79,7 @@ class Application extends React.Component {
     render() {
         return (<div>
                 <div>{this.renderCompanies(this.state.jsonData)}</div>
+                <Cursor blinkType="blink-grey" />
             </div>
         )
     }

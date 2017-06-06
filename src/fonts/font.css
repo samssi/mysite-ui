@@ -8,6 +8,21 @@
     font-style: normal;
 }
 
+@-webkit-keyframes blink-grey {
+    0%   {background-color: grey;}
+    49%  {background-color: grey;}
+    50% {background-color: #20398d;}
+    100% {background-color: #20398d;}
+
+}
+
+@keyframes blink-grey {
+    0%   {background-color: grey;}
+    49%  {background-color: grey;}
+    50% {background-color: #20398d;}
+    100% {background-color: #20398d;}
+}
+
 @-webkit-keyframes blink-white {
     0%   {background-color: white;}
     49%  {background-color: white;}
