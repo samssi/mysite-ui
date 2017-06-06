@@ -6,7 +6,8 @@ import Menu from './Menu'
 import Cursor from './style/Cursor'
 
 const mainBlock = {
-    height: '200vh',
+    height: '100%',
+    'min-height': '85vh',
     backgroundColor: '#20398d'
 };
 
