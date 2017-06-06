@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const field = {
-    marginBottom: '20px'
+    marginBottom: "20px"
 };
 
 class Paragraphs extends React.Component {

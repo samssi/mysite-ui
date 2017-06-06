@@ -1,34 +1,34 @@
-import React from 'react';
-import Cursor from '../style/Cursor'
-import axiosFactory from '../factory/axiosFactory';
+import React from "react";
+import Cursor from "../style/Cursor"
+import axiosFactory from "../factory/axiosFactory";
 const axios = axiosFactory.createAxiosContentRestClient();
 
 
 const header = {
-    color: 'yellow',
-    marginBottom: '20px'
+    color: "yellow",
+    marginBottom: "20px"
 };
 
 const description = {
-    color: 'white',
-    marginBottom: '20px'
+    color: "white",
+    marginBottom: "20px"
 };
 
 const technologies = {
-    color: 'white',
-    marginBottom: '20px'
+    color: "white",
+    marginBottom: "20px"
 };
 
 const serviceDescription = {
-    color: 'white'
+    color: "white"
 };
 
 const link = {
-    color: 'red'
+    color: "red"
 };
 
 const field = {
-    marginBottom: '20px'
+    marginBottom: "20px"
 };
 
 
@@ -36,8 +36,8 @@ class About extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            header: '',
-            description: '',
+            header: "",
+            description: "",
             technologies: [],
             services: []
         }

@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios from "axios";
 
-import { browserHistory } from 'react-router';
+import { browserHistory } from "react-router";
 
 function createAxiosAuthRestClient() {
     return axios.create({
@@ -16,9 +16,9 @@ function createAxiosContentRestClient() {
         return response;
     }, function (error) {
         if (error.response.status === 401) {
-            console.info('Token expired. Removing token...');
-            sessionStorage.removeItem('jwt');
-            browserHistory.push('/login');
+            console.info("Token expired. Removing token...");
+            sessionStorage.removeItem("jwt");
+            browserHistory.push("/login");
         }
     });
     return client;

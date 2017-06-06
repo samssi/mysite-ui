@@ -1,28 +1,28 @@
-import React from 'react';
-import Cursor from '../style/Cursor'
-import Paragraphs from '../common/Paragraphs'
+import React from "react";
+import Cursor from "../style/Cursor";
+import Paragraphs from "../common/Paragraphs";
 
-import axiosFactory from '../factory/axiosFactory';
+import axiosFactory from "../factory/axiosFactory";
 const axios = axiosFactory.createAxiosContentRestClient();
 
 const company = {
-    color: 'yellow'
+    color: "yellow"
 };
 
 const assignment = {
-    marginBottom: '40px'
+    marginBottom: "40px"
 };
 
 const year = {
-    color: 'white'
+    color: "white"
 };
 
 const assignmentDescription = {
-    color: 'white'
+    color: "white"
 };
 
 const technology = {
-    color: 'grey'
+    color: "grey"
 };
 
 class Application extends React.Component {
@@ -34,7 +34,7 @@ class Application extends React.Component {
     }
 
     loadPortfolio() {
-        axios.get('/private/contents/portfolio')
+        axios.get("/private/contents/portfolio")
             .then((response) => {
                 this.setState({
                     jsonData: response.data

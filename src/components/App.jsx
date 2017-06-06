@@ -1,29 +1,29 @@
-import React from 'react'
-import Load from './Load'
-import Banner from './Banner'
-import MysiteBanner from './MysiteBanner'
-import Menu from './Menu'
-import Cursor from './style/Cursor'
+import React from "react";
+import Load from "./Load";
+import Banner from "./Banner";
+import MysiteBanner from "./MysiteBanner";
+import Menu from "./Menu";
+import Cursor from "./style/Cursor";
 
 const mainBlock = {
-    height: '100%',
-    'min-height': '85vh',
-    backgroundColor: '#20398d'
+    height: "100%",
+    "min-height": "85vh",
+    backgroundColor: "#20398d"
 };
 
 const headerBanner = {
-    paddingTop: '20px',
-    textAlign: 'center',
-    color: '#6076c5',
-    backgroundColor: '#20398d',
-    display: 'block'
+    paddingTop: "20px",
+    textAlign: "center",
+    color: "#6076c5",
+    backgroundColor: "#20398d",
+    display: "block"
 };
 
 const children = {
-    color: 'white',
-    display: 'block',
-    marginBottom: '40px',
-    padding: '30px'
+    color: "white",
+    display: "block",
+    marginBottom: "40px",
+    padding: "30px"
 };
 
 class App extends React.Component {
@@ -51,7 +51,7 @@ class App extends React.Component {
                 <div style={children}>
                 {this.props.children}
                 </div>
-                {this.state.loading ? (<Cursor blinkType="blink-blue"/>) : ''}
+                {this.state.loading ? (<Cursor blinkType="blink-blue"/>) : ""}
                 </div>
             </div>
         );

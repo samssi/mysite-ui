@@ -1,19 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
 function cursor(blinkType) {
     const value = {
-        marginTop: '10px',
-        width: '20px',
-        height: '20px',
+        marginTop: "10px",
+        width: "20px",
+        height: "20px",
         animationName: blinkType,
         WebkitAnimationName: blinkType,
-        WebkitAnimationDuration: '1s',
-        WebkitAnimationIterationCount: 'infinite',
-        animationIterationCount: 'infinite',
-        animationDuration: '1s',
-        WebkitAnimationTimingFunction: 'linear',
-        animationTimingFunction: 'linear'};
+        WebkitAnimationDuration: "1s",
+        WebkitAnimationIterationCount: "infinite",
+        animationIterationCount: "infinite",
+        animationDuration: "1s",
+        WebkitAnimationTimingFunction: "linear",
+        animationTimingFunction: "linear"};
     return value;
 }
 

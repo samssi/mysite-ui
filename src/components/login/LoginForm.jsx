@@ -1,45 +1,45 @@
-import React from 'react';
-import axiosConfigurator from '../factory/axiosConfigurator';
-import axiosFactory from '../factory/axiosFactory';
-import LoginError from './LoginError';
-import { browserHistory } from 'react-router';
+import React from "react";
+import axiosConfigurator from "../factory/axiosConfigurator";
+import axiosFactory from "../factory/axiosFactory";
+import LoginError from "./LoginError";
+import { browserHistory } from "react-router";
 
 const axios = axiosFactory.createAxiosAuthRestClient();
 
 const inputText = {
-    border: 'none',
-    borderBottom: '0px solid white',
-    color: 'white',
-    backgroundColor: 'black',
-    fontFamily: 'C64',
-    fontSize: '16px',
-    height: '20px'
+    border: "none",
+    borderBottom: "0px solid white",
+    color: "white",
+    backgroundColor: "black",
+    fontFamily: "C64",
+    fontSize: "16px",
+    height: "20px"
 };
 
 const submitButton = {
-    cursor: 'pointer',
-    background: 'none',
-    border: 'none',
-    borderBottom: '0px solid white',
-    color: 'white',
-    backgroundColor: '#20398d',
-    fontFamily: 'C64',
-    fontSize: '16px',
-    height: '20px'
+    cursor: "pointer",
+    background: "none",
+    border: "none",
+    borderBottom: "0px solid white",
+    color: "white",
+    backgroundColor: "#20398d",
+    fontFamily: "C64",
+    fontSize: "16px",
+    height: "20px"
 };
 
 const field = {
-    marginBottom: '20px'
+    marginBottom: "20px"
 };
 
 class LoginForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: '',
-            password: '',
+            username: "",
+            password: "",
             loginFailed: false,
-            loginFailureMessage: ''
+            loginFailureMessage: ""
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -52,26 +52,26 @@ class LoginForm extends React.Component {
     }
 
     doLogin() {
-        axios.post('/login', {
+        axios.post("/login", {
             username: this.state.username,
             password: this.state.password
         })
             .then((response) => {
-                sessionStorage.setItem('jwt', response.data.token);
+                sessionStorage.setItem("jwt", response.data.token);
                 axiosConfigurator.configureAuthorizationHeader();
-                browserHistory.push('/');
+                browserHistory.push("/");
             })
             .catch((error) => { this.handleErrors(error); });
     }
 
     handleErrors(error) {
         if (error.response === undefined) {
-            console.log('network');
+            console.log("network");
             this.state.loginFailed = true;
             this.state.loginFailureMessage = "Authentication service down :( Please try again later";
         }
         else if (error.response.status === 401) {
-            console.log('other');
+            console.log("other");
             this.state.loginFailed = true;
             this.state.loginFailureMessage = "Username or password not correct!";
         }
@@ -92,14 +92,14 @@ class LoginForm extends React.Component {
                        type="text"
                        placeholder="Username..."
                        value={this.state.value}
-                       onChange={this.handleChange.bind(this, 'username')} />
+                       onChange={this.handleChange.bind(this, "username")} />
             </div>
             <div style={field}>
                 <input style={inputText}
                        type="password"
                        placeholder="Password..."
                        value={this.state.value}
-                       onChange={this.handleChange.bind(this, 'password')} />
+                       onChange={this.handleChange.bind(this, "password")} />
             </div>
             <div style={field}>
                 <input style={submitButton} type="submit" value="Login"/>

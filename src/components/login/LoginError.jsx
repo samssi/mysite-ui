@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const error = {
-    color: 'red'
+    color: "red"
 };
 
 class LoginError extends React.Component {

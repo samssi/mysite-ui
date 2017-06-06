@@ -1,31 +1,31 @@
-import React from 'react';
-import axiosFactory from '../factory/axiosFactory';
+import React from "react";
+import axiosFactory from "../factory/axiosFactory";
 const axios = axiosFactory.createAxiosContentRestClient();
 
 
 const clear = {
-    clear: 'both'
+    clear: "both"
 };
 
 const leftColumn = {
-    width: '500px',
-    overflow: 'hidden'
+    width: "500px",
+    overflow: "hidden"
 };
 
 const rightColumn = {
-    width: '755px',
-    float: 'right'
+    width: "755px",
+    float: "right"
 };
 
 const header = {
-    color: 'white'
+    color: "white"
 };
 
 const column = {
-    color: 'white',
-    display: 'block',
-    marginTop: '20px',
-    marginBottom: '40px'
+    color: "white",
+    display: "block",
+    marginTop: "20px",
+    marginBottom: "40px"
 };
 
 class Experience extends React.Component {

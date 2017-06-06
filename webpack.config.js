@@ -1,12 +1,12 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: './src/index.html',
-  favicon: 'favicon.ico',
-  filename: 'index.html',
-  inject: 'body'
+  template: "./src/index.html",
+  favicon: "favicon.ico",
+  filename: "index.html",
+  inject: "body"
 });
 
 const DefinePluginConfig = new webpack.DefinePlugin({
@@ -15,7 +15,7 @@ const DefinePluginConfig = new webpack.DefinePlugin({
 });
 
 function setupAuthApi() {
-  return process.env.NODE_ENV == "production" ? "https://mysite.samssi.com/api/v1/auth" : 'http://localhost:8100/api/v1/auth';
+  return process.env.NODE_ENV == "production" ? "https://mysite.samssi.com/api/v1/auth" : "http://localhost:8100/api/v1/auth";
 }
 
 function setupContentApi() {
@@ -23,20 +23,20 @@ function setupContentApi() {
 }
 
 module.exports = {
-  entry: './src/index.jsx',
+  entry: "./src/index.jsx",
   output: {
-    path: path.resolve('dist'),
-    filename: 'index_bundle.js'
+    path: path.resolve("dist"),
+    filename: "index_bundle.js"
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.css', '.eot', '.ttf', '.woff', '.woff2']
+    extensions: [".js", ".jsx", ".css", ".eot", ".ttf", ".woff", ".woff2"]
   },
   module: {
     loaders: [
-      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.css$/,loader: 'style-loader!css-loader' },
-      { test   : /\.(eot|ttf|woff|woff2)$/, loader : 'file-loader' }
+      { test: /\.js$/, loader: "babel-loader", exclude: /node_modules/ },
+      { test: /\.jsx$/, loader: "babel-loader", exclude: /node_modules/ },
+      { test: /\.css$/,loader: "style-loader!css-loader" },
+      { test   : /\.(eot|ttf|woff|woff2)$/, loader : "file-loader" }
     ]
   },
   plugins: [

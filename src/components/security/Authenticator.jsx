@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
 function isAuthenticated() {
-    return sessionStorage.getItem('jwt') != null;
+    return sessionStorage.getItem("jwt") != null;
 }
 
 function requireAuthentication(nextState, replace) {
     if (!isAuthenticated()) {
         replace({
-            pathname: '/login',
+            pathname: "/login",
             state: {
                 nextPathname: nextState.location.pathname
             }

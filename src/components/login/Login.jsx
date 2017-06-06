@@ -1,9 +1,9 @@
-import React from 'react';
-import Cursor from '../style/Cursor'
-import LoginForm from './LoginForm'
+import React from "react";
+import Cursor from "../style/Cursor";
+import LoginForm from "./LoginForm";
 
 const field = {
-    marginBottom: '20px'
+    marginBottom: "20px"
 };
 
 class Login extends React.Component {

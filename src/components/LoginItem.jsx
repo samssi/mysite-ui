@@ -1,21 +1,21 @@
-import React from 'react'
-import { Link } from 'react-router'
-import {isAuthenticated} from './security/Authenticator'
+import React from "react";
+import { Link } from "react-router";
+import {isAuthenticated} from "./security/Authenticator";
 
 const liStyle = {
-    marginLeft: '10px',
-    float: 'left'
+    marginLeft: "10px",
+    float: "left"
 };
 
 const liAStyle = {
-    display: 'block',
-    paddingLeft: '20px',
-    backgroundColor: '#20398d',
-    color: '#6076c5',
-    textAlign: 'center',
-    paddingTop: '20px',
-    textDecoration: 'none',
-    fontFamily: 'C64'
+    display: "block",
+    paddingLeft: "20px",
+    backgroundColor: "#20398d",
+    color: "#6076c5",
+    textAlign: "center",
+    paddingTop: "20px",
+    textDecoration: "none",
+    fontFamily: "C64"
 };
 
 class LoginItem extends React.Component {

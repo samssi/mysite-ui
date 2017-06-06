@@ -1,42 +1,42 @@
-import React from 'react';
-import Paragraphs from '../common/Paragraphs'
-import Cursor from '../style/Cursor'
+import React from "react";
+import Paragraphs from "../common/Paragraphs";
+import Cursor from "../style/Cursor";
 
-import axiosFactory from '../factory/axiosFactory';
+import axiosFactory from "../factory/axiosFactory";
 const axios = axiosFactory.createAxiosContentRestClient();
 
 const greetingColumn = {
-    marginBottom: '20px'
+    marginBottom: "20px"
 };
 
 const signatureBlock = {
-    marginTop: '75px'
+    marginTop: "75px"
 };
 
 const leftColumn = {
-    width: '500px',
-    overflow: 'hidden'
+    width: "500px",
+    overflow: "hidden"
 };
 
 const rightColumn = {
-    width: '300px',
-    float: 'right'
+    width: "300px",
+    float: "right"
 };
 
 class Application extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            greeting: '',
-            signatureTitle: '',
-            signature: '',
+            greeting: "",
+            signatureTitle: "",
+            signature: "",
             paragraphs: []
 
         }
     }
 
     loadApplication() {
-        axios.get('/private/contents/application')
+        axios.get("/private/contents/application")
             .then((response) => {
                 const json = response.data;
                 this.setState({

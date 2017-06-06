@@ -1,12 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
 const headerBanner = {
-    paddingTop: '20px',
-    textAlign: 'center',
-    color: 'white',
-    backgroundColor: '#20398d',
-    display: 'block'
+    paddingTop: "20px",
+    textAlign: "center",
+    color: "white",
+    backgroundColor: "#20398d",
+    display: "block"
 };
 
 class MysiteBanner extends React.Component {

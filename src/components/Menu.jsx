@@ -1,32 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Link } from 'react-router'
-import MenuItem from './MenuItem'
-import LoginItem from './LoginItem'
+import React from "react";
+import ReactDOM from "react-dom";
+import { Link } from "react-router"
+import MenuItem from "./MenuItem"
+import LoginItem from "./LoginItem"
 
 const ulStyle = {
-    paddingTop: '10px',
-    backgroundColor: '#20398d',
-    margin: '0',
-    padding: '0',
-    overflow: 'hidden',
-    listStyleType: 'none'
+    paddingTop: "10px",
+    backgroundColor: "#20398d",
+    margin: "0",
+    padding: "0",
+    overflow: "hidden",
+    listStyleType: "none"
 };
 
 const liStyle = {
-    marginLeft: '10px',
-    float: 'left'
+    marginLeft: "10px",
+    float: "left"
 };
 
 const liAStyle = {
-    display: 'block',
-    paddingLeft: '20px',
-    backgroundColor: '#20398d',
-    color: '#6076c5',
-    textAlign: 'center',
-    paddingTop: '20px',
-    textDecoration: 'none',
-    fontFamily: 'C64'
+    display: "block",
+    paddingLeft: "20px",
+    backgroundColor: "#20398d",
+    color: "#6076c5",
+    textAlign: "center",
+    paddingTop: "20px",
+    textDecoration: "none",
+    fontFamily: "C64"
 };
 
 class Menu extends React.Component {
