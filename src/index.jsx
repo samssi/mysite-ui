@@ -9,6 +9,8 @@ import Application from './components/application/Application';
 import About from './components/about/About';
 import Portfolio from './components/portfolio/Portfolio';
 import './fonts/font.css';
+import './css/reset.css';
+
 import {requireAuthentication} from './components/security/Authenticator';
 import axiosConfigurator from './components/factory/axiosConfigurator';
 axiosConfigurator.configureAuthorizationHeader();
