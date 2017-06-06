@@ -7,7 +7,7 @@ import Cursor from "./style/Cursor";
 
 const mainBlock = {
     height: "100%",
-    "min-height": "85vh",
+    minHeight: "85vh",
     backgroundColor: "#20398d"
 };
 
