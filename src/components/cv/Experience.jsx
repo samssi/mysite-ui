@@ -9,7 +9,8 @@ const clear = {
 
 const leftColumn = {
     width: "500px",
-    overflow: "hidden"
+    overflow: "hidden",
+    display: "block"
 };
 
 const rightColumn = {

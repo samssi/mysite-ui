@@ -2,18 +2,8 @@ import React from "react";
 import axiosFactory from "../factory/axiosFactory";
 const axios = axiosFactory.createAxiosContentRestClient();
 
-const leftColumn = {
-    width: "500px",
-    overflow: "hidden"
-};
-
-const rightColumn = {
-    width: "755px",
-    float: "right"
-};
-
 const column = {
-    display: "block",
+    display: "block"
 };
 
 const personalInformation = {
@@ -65,12 +55,13 @@ class PersonalInformation extends React.Component {
 
     render() {
         return (<div style={personalInformation}>
-            <div style={personalInfoField}><span style={leftColumn}><img src={this.state.picture} /></span></div>
-            <div style={personalInfoField}><span style={leftColumn}>{this.state.name}</span><span style={rightColumn}>{this.state.cvTitle}</span></div>
-            <div style={personalInfoField}><span style={leftColumn}>{this.state.street}</span></div>
-            <div style={personalInfoField}><span style={leftColumn}>{this.state.zipCodeAndCity}</span></div>
-            <div style={personalInfoField}><span style={leftColumn}>{this.state.phoneNumber}</span></div>
-            <div style={personalInfoField}><span style={rightColumn}>{this.state.applicationDate}</span></div>
+            <div style={personalInfoField}><img src={this.state.picture} /></div>
+            <div style={personalInfoField}>{this.state.name}</div>
+            <div style={personalInfoField}>{this.state.street}</div>
+            <div style={personalInfoField}>{this.state.zipCodeAndCity}</div>
+            <div style={personalInfoField}>{this.state.phoneNumber}</div>
+            <div style={personalInfoField}>{"\u00a0"}</div>
+            <div style={personalInfoField}>{this.state.cvTitle} - {this.state.applicationDate}</div>
         </div>);
     }
 }
