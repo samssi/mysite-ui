@@ -26,7 +26,7 @@ const column = {
     color: "white",
     display: "block",
     marginTop: "20px",
-    marginBottom: "40px"
+    marginBottom: "20px"
 };
 
 class Experience extends React.Component {
@@ -52,12 +52,20 @@ class Experience extends React.Component {
 
     renderHeaders(jsonData) {
         return jsonData.map((object, i) => {
+            if (object.header === "") {
             return (
                 <div style={header} key={i}>
-                    {(object.header === "") ? "\u00a0" : object.header}
                     {this.renderBlocks(object.blocks)}
-                </div>
-            );
+                </div>);
+            }
+            else {
+                return (
+                    <div style={header} key={i}>
+                        {object.header}
+                        {this.renderBlocks(object.blocks)}
+                    </div>
+                );
+            }
         });
     }
 
