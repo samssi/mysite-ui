@@ -1,8 +1,8 @@
 import React from "react";
-import axiosConfigurator from "../factory/axiosConfigurator";
-import axiosFactory from "../factory/axiosFactory";
+import * as axiosConfigurator from "../factory/axiosConfigurator";
+import * as axiosFactory from "../factory/axiosFactory";
 import LoginError from "./LoginError";
-import { browserHistory } from "react-router";
+import { BrowserRouter } from "react-router-dom";
 
 const axios = axiosFactory.createAxiosAuthRestClient();
 

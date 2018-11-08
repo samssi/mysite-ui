@@ -1,5 +1,5 @@
 import React from "react";
-import axiosFactory from "../factory/axiosFactory";
+import * as axiosFactory from "../factory/axiosFactory";
 const axios = axiosFactory.createAxiosContentRestClient();
 
 const column = {

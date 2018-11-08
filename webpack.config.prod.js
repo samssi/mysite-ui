@@ -21,6 +21,7 @@ const DefinePluginConfig = new webpack.DefinePlugin({
 });
 
 module.exports = {
+  mode: 'production',
   entry: "./src/index.jsx",
   output: {
     path: path.resolve("dist"),

@@ -1,7 +1,5 @@
 import axios from "axios";
 
-function configureAuthorizationHeader() {
+export function configureAuthorizationHeader() {
     axios.defaults.headers.common['Authorization'] = sessionStorage.getItem('jwt');
 }
-
-module.exports = { configureAuthorizationHeader };

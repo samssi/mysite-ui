@@ -16,6 +16,7 @@ const DefinePluginConfig = new webpack.DefinePlugin({
 });
 
 module.exports = {
+  mode: 'development',
   entry: "./src/index.jsx",
   output: {
     path: path.resolve("dist"),
@@ -25,7 +26,7 @@ module.exports = {
     extensions: [".js", ".jsx", ".css", ".eot", ".ttf", ".woff", ".woff2"]
   },
   module: {
-    loaders: [
+    rules: [
       { test: /\.js$/, loader: "babel-loader", exclude: /node_modules/ },
       { test: /\.jsx$/, loader: "babel-loader", exclude: /node_modules/ },
       { test: /\.css$/,loader: "style-loader!css-loader" },

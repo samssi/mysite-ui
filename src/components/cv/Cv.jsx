@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router";
 import PersonalInformation from "./PersonalInformation";
 import Experience from "./Experience";
 import Cursor from "../style/Cursor";

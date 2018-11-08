@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {Router, Route, browserHistory} from "react-router";
+import {Route} from "react-router";
+import {BrowserRouter} from "react-router-dom";
 import App from "./components/App";
 import Cv from "./components/cv/Cv";
 import Login from "./components/login/Login";
@@ -12,18 +13,20 @@ import "./fonts/font.css";
 import "./css/reset.css";
 
 import {requireAuthentication} from "./components/security/Authenticator";
-import axiosConfigurator from "./components/factory/axiosConfigurator";
+import * as axiosConfigurator from "./components/factory/axiosConfigurator";
+
 axiosConfigurator.configureAuthorizationHeader();
 
 ReactDOM.render((
-    <Router history={browserHistory}>
-        <Route path="/" component={App}>
-            <Route path="/cv" component={Cv} onEnter={requireAuthentication}/>
-            <Route path="/login" component={Login}/>
-            <Route path="/application" component={Application} onEnter={requireAuthentication}/>
-            <Route path="/portfolio" component={Portfolio} onEnter={requireAuthentication}/>
-            <Route path="/about" component={About} onEnter={requireAuthentication}/>
-            <Route path="/logout" component={Logout}/>
-        </Route>
-    </Router>
+    <BrowserRouter>
+        <App>
+                <Route path="/"/>
+                <Route path="/cv" component={Cv} onEnter={requireAuthentication}/>
+                <Route path="/login" component={Login}/>
+                <Route path="/application" component={Application} onEnter={requireAuthentication}/>
+                <Route path="/portfolio" component={Portfolio} onEnter={requireAuthentication}/>
+                <Route path="/about" component={About} onEnter={requireAuthentication}/>
+                <Route path="/logout" component={Logout}/>
+        </App>
+    </BrowserRouter>
 ), document.getElementById("root"));
