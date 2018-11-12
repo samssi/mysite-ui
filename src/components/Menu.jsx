@@ -32,7 +32,6 @@ const liAStyle = {
 class Menu extends React.Component {
     render() {
         return (<ul role="nav" style={ulStyle}>
-            <MenuItem to="/" text="FRONTPAGE"/>
             <MenuItem to="/cv" text="CV" protected="true"/>
             <MenuItem to="/application" text="APPLICATION" protected="true"/>
             <MenuItem to="/portfolio" text="PORTFOLIO" protected="true"/>

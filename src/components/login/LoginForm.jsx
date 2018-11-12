@@ -59,7 +59,7 @@ class LoginForm extends React.Component {
             .then((response) => {
                 sessionStorage.setItem("jwt", response.data.token);
                 axiosConfigurator.configureAuthorizationHeader();
-                browserHistory.push("/");
+                browserHistory.push("/application");
             })
             .catch((error) => { this.handleErrors(error); });
     }
