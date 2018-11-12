@@ -2,7 +2,7 @@ import React from "react";
 import Paragraphs from "../common/Paragraphs";
 import Cursor from "../style/Cursor";
 
-import axiosFactory from "../factory/axiosFactory";
+import * as axiosFactory from "../factory/axiosFactory";
 const axios = axiosFactory.createAxiosContentRestClient();
 
 const greetingColumn = {

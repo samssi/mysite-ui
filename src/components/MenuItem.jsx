@@ -1,12 +1,11 @@
 import React from "react"
-import { Link } from "react-router"
+import { Link } from "react-router-dom"
 import {isAuthenticated} from "./security/Authenticator"
 
 const liStyle = {
     marginLeft: "10px",
     float: "left"
 };
-
 
 const liAStyle = {
     display: "block",

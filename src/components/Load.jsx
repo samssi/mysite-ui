@@ -1,18 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
-
-const cursor = {
-    width: "20px",
-    height: "20px",
-    animationName: "blink-blue",
-    WebkitAnimationName: "blink-blue",
-    WebkitAnimationDuration: "1s",
-    WebkitAnimationIterationCount: "infinite",
-    animationIterationCount: "infinite",
-    animationDuration: "1s",
-    WebkitAnimationTimingFunction: "linear",
-    animationTimingFunction: "linear"
-};
 
 const ready = {
     color: "#6076c5",

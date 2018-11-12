@@ -1,7 +1,5 @@
 import axios from "axios";
 
-import { browserHistory } from "react-router";
-
 function createAxiosAuthRestClient() {
     return axios.create({
         baseURL: __AUTH_API_URL__
@@ -16,12 +14,16 @@ function createAxiosContentRestClient() {
         return response;
     }, function (error) {
         if (error.response.status === 401) {
-            console.info("Token expired. Removing token...");
-            sessionStorage.removeItem("jwt");
-            browserHistory.push("/login");
+            throwOut();
         }
     });
     return client;
 }
 
-module.exports = { createAxiosAuthRestClient, createAxiosContentRestClient };
+function throwOut() {
+    console.info("Token expired. Removing token...");
+    sessionStorage.removeItem("jwt");
+    document.location.href = "/";
+}
+
+export { createAxiosAuthRestClient, createAxiosContentRestClient };

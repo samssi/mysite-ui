@@ -1,9 +1,8 @@
 import React from "react";
-import axiosConfigurator from "../factory/axiosConfigurator";
-import axiosFactory from "../factory/axiosFactory";
+import * as axiosConfigurator from "../factory/axiosConfigurator";
+import * as axiosFactory from "../factory/axiosFactory";
 import LoginError from "./LoginError";
-import { browserHistory } from "react-router";
-
+import { withRouter } from "react-router-dom";
 const axios = axiosFactory.createAxiosAuthRestClient();
 
 const inputText = {
@@ -59,19 +58,18 @@ class LoginForm extends React.Component {
             .then((response) => {
                 sessionStorage.setItem("jwt", response.data.token);
                 axiosConfigurator.configureAuthorizationHeader();
-                browserHistory.push("/application");
+                this.props.history.push("/application");
+
             })
             .catch((error) => { this.handleErrors(error); });
     }
 
     handleErrors(error) {
         if (error.response === undefined) {
-            console.log("network");
             this.state.loginFailed = true;
             this.state.loginFailureMessage = "Authentication service down :( Please try again later";
         }
         else if (error.response.status === 401) {
-            console.log("other");
             this.state.loginFailed = true;
             this.state.loginFailureMessage = "Username or password not correct!";
         }
@@ -109,4 +107,4 @@ class LoginForm extends React.Component {
 
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);

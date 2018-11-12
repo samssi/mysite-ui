@@ -1,10 +1,10 @@
 import React from "react";
-import { browserHistory } from "react-router";
+import { BrowserRouter } from "react-router-dom";
 
 class Logout extends React.Component {
     componentDidMount() {
         sessionStorage.removeItem("jwt");
-        browserHistory.push("/");
+        this.props.history.push("/");
     }
     render() { return null; }
 }

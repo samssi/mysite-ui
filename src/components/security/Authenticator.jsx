@@ -1,5 +1,3 @@
-import React from "react";
-
 function isAuthenticated() {
     return sessionStorage.getItem("jwt") != null;
 }
@@ -15,4 +13,4 @@ function requireAuthentication(nextState, replace) {
     }
 }
 
-export {requireAuthentication, isAuthenticated};
+export { requireAuthentication, isAuthenticated };
