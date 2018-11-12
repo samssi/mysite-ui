@@ -66,12 +66,10 @@ class LoginForm extends React.Component {
 
     handleErrors(error) {
         if (error.response === undefined) {
-            console.log("network");
             this.state.loginFailed = true;
             this.state.loginFailureMessage = "Authentication service down :( Please try again later";
         }
         else if (error.response.status === 401) {
-            console.log("other");
             this.state.loginFailed = true;
             this.state.loginFailureMessage = "Username or password not correct!";
         }
