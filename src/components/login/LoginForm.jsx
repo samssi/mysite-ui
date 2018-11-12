@@ -2,8 +2,7 @@ import React from "react";
 import * as axiosConfigurator from "../factory/axiosConfigurator";
 import * as axiosFactory from "../factory/axiosFactory";
 import LoginError from "./LoginError";
-import { BrowserRouter } from "react-router-dom";
-
+import { withRouter } from "react-router-dom";
 const axios = axiosFactory.createAxiosAuthRestClient();
 
 const inputText = {
@@ -59,7 +58,8 @@ class LoginForm extends React.Component {
             .then((response) => {
                 sessionStorage.setItem("jwt", response.data.token);
                 axiosConfigurator.configureAuthorizationHeader();
-                browserHistory.push("/application");
+                this.props.history.push("/application");
+
             })
             .catch((error) => { this.handleErrors(error); });
     }
@@ -109,4 +109,4 @@ class LoginForm extends React.Component {
 
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);
