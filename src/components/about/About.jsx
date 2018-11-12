@@ -3,7 +3,6 @@ import Cursor from "../style/Cursor"
 import * as axiosFactory from "../factory/axiosFactory";
 const axios = axiosFactory.createAxiosContentRestClient();
 
-
 const header = {
     color: "yellow",
     marginBottom: "20px"
@@ -30,7 +29,6 @@ const link = {
 const field = {
     marginBottom: "20px"
 };
-
 
 class About extends React.Component {
     constructor(props, context) {

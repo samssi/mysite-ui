@@ -1,7 +1,7 @@
 import React from "react";
 import * as axiosFactory from "../factory/axiosFactory";
-const axios = axiosFactory.createAxiosContentRestClient();
 
+const axios = axiosFactory.createAxiosContentRestClient();
 
 const clear = {
     clear: "both"

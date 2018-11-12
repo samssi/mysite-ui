@@ -7,7 +7,6 @@ const liStyle = {
     float: "left"
 };
 
-
 const liAStyle = {
     display: "block",
     paddingLeft: "20px",

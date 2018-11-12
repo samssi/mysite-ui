@@ -26,4 +26,4 @@ function throwOut() {
     document.location.href = "/";
 }
 
-export {createAxiosAuthRestClient, createAxiosContentRestClient};
+export { createAxiosAuthRestClient, createAxiosContentRestClient };

@@ -13,4 +13,4 @@ function requireAuthentication(nextState, replace) {
     }
 }
 
-export {requireAuthentication, isAuthenticated};
+export { requireAuthentication, isAuthenticated };

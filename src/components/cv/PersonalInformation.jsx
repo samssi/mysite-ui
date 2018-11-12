@@ -2,10 +2,6 @@ import React from "react";
 import * as axiosFactory from "../factory/axiosFactory";
 const axios = axiosFactory.createAxiosContentRestClient();
 
-const column = {
-    display: "block"
-};
-
 const personalInformation = {
     color: "white",
     paddingTop: "10px",
