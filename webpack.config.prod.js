@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: "./src/index.html",
@@ -8,8 +9,6 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   filename: "index.html",
   inject: "body"
 });
-
-const UglifyJsPluginConfig = new webpack.optimize.UglifyJsPlugin();
 
 const DefinePluginConfig = new webpack.DefinePlugin({
   'process.env': {
@@ -31,17 +30,19 @@ module.exports = {
     extensions: [".js", ".jsx", ".css", ".eot", ".ttf", ".woff", ".woff2"]
   },
   module: {
-    loaders: [
+    rules: [
       { test: /\.js$/, loader: "babel-loader", exclude: /node_modules/ },
       { test: /\.jsx$/, loader: "babel-loader", exclude: /node_modules/ },
       { test: /\.css$/,loader: "style-loader!css-loader" },
       { test   : /\.(eot|ttf|woff|woff2)$/, loader : "file-loader" }
     ]
   },
+  optimization: {
+    minimizer: [new UglifyJsPlugin()]
+  },
   plugins: [
     HtmlWebpackPluginConfig,
-    DefinePluginConfig,
-    UglifyJsPluginConfig
+    DefinePluginConfig
   ]
 }
 
