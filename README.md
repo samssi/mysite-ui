@@ -8,12 +8,14 @@ The responsive frontend of the application runs in the browser and uses React.js
     * Upgrade all packages to latest versions
     * Revised ES formatting for new babel transpiler
     * Updated React router
-    * History can't be accessed outside of React context anymore so axios configuration will use document.location.href instead of history push
+    * History can't be accessed outside of React context anymore so axios configuration will 
+      use document.location.href instead of history push
     * Login/Logout revised to implement history push with the newer React implementation
 
 ### 1.0.1
     * Remove frontpage which was empty
-    * Make the site more flowing. Login opens the application page and application page is moved first in the menu
+    * Make the site more flowing. Login opens the application page 
+      and application page is moved first in the menu
 
 ### 1.0
     * First release version of the site
