@@ -1,6 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { Link } from "react-router"
 import MenuItem from "./MenuItem"
 import LoginItem from "./LoginItem"
 

@@ -1,5 +1,3 @@
-import React from "react";
-
 function isAuthenticated() {
     return sessionStorage.getItem("jwt") != null;
 }

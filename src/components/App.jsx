@@ -11,14 +11,6 @@ const mainBlock = {
     backgroundColor: "#20398d"
 };
 
-const headerBanner = {
-    paddingTop: "20px",
-    textAlign: "center",
-    color: "#6076c5",
-    backgroundColor: "#20398d",
-    display: "block"
-};
-
 const children = {
     color: "white",
     display: "block",

@@ -1,5 +1,4 @@
 import React from "react";
-import Cursor from "../style/Cursor";
 import LoginForm from "./LoginForm";
 
 const field = {
